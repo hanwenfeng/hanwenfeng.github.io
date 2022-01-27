@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> composer中的autoload | Fhw Site</title>
-  <link rel = 'canonical' href = 'http://mootao.com/posts/2016-11-05-php-composer-autoload/'>
+  <link rel = 'canonical' href = 'http://www.mootao.com/posts/2016-11-05-php-composer-autoload/'>
   <meta name="description" content="不积跬步，无以至千里；不积小流，无以成江海。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -19,7 +19,7 @@
 <meta property="og:description" content="composer的autoload可以轻松的实现php的自动加载。在composer.json中添加autoload字段即可。当前支持 PSR-0 PSR-4 classmap解析和files包含。官方推荐PSR-4标准（添加类时不需要重新生成加载器）。
 PSR-4 Under the psr-4 key you define a mapping from namespaces to paths, relative to the package root. When autoloading a class like Foo\\Bar\\Baz a namespace prefix Foo\\ pointing to a directory src/ means that the autoloader will look for a file named src/Bar/Baz.php and include it if present. Note that as opposed to the older PSR-0 style, the prefix (Foo\\) is not present in the file path." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://mootao.com/posts/2016-11-05-php-composer-autoload/" />
+<meta property="og:url" content="http://www.mootao.com/posts/2016-11-05-php-composer-autoload/" />
 <meta property="article:published_time" content="2016-11-05T02:42:06+00:00" />
 <meta property="article:modified_time" content="2016-11-05T02:42:06+00:00" />
 
@@ -33,7 +33,7 @@ PSR-4 Under the psr-4 key you define a mapping from namespaces to paths, relativ
     
   
   
-  <link rel="stylesheet" href="http://mootao.com/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+  <link rel="stylesheet" href="http://www.mootao.com/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
 
   
   
@@ -45,7 +45,7 @@ PSR-4 Under the psr-4 key you define a mapping from namespaces to paths, relativ
   
 
   
-<link rel="icon" type="image/png" href="http://mootao.com/images/favicon.ico" />
+<link rel="icon" type="image/png" href="http://www.mootao.com/images/favicon.ico" />
 
   
   
@@ -79,14 +79,14 @@ PSR-4 Under the psr-4 key you define a mapping from namespaces to paths, relativ
       <ul>
         
         <li>
-          <a class="icon" href=" http://mootao.com/posts/2016-10-22-z/" aria-label="Previous">
+          <a class="icon" href=" http://www.mootao.com/posts/2016-10-22-z/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="http://mootao.com/posts/2016-11-29-iptables-usage/" aria-label="Next">
+          <a class="icon" href="http://www.mootao.com/posts/2016-11-29-iptables-usage/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -117,47 +117,47 @@ PSR-4 Under the psr-4 key you define a mapping from namespaces to paths, relativ
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&text=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&text=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&title=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&title=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&is_video=false&description=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&is_video=false&description=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=composer%e4%b8%ad%e7%9a%84autoload&body=Check out this article: http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=composer%e4%b8%ad%e7%9a%84autoload&body=Check out this article: http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&title=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&title=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&title=composer%e4%b8%ad%e7%9a%84autoload" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&title=composer%e4%b8%ad%e7%9a%84autoload" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&name=composer%e4%b8%ad%e7%9a%84autoload&description=composer%e7%9a%84autoload%e5%8f%af%e4%bb%a5%e8%bd%bb%e6%9d%be%e7%9a%84%e5%ae%9e%e7%8e%b0php%e7%9a%84%e8%87%aa%e5%8a%a8%e5%8a%a0%e8%bd%bd%e3%80%82%e5%9c%a8composer.json%e4%b8%ad%e6%b7%bb%e5%8a%a0autoload%e5%ad%97%e6%ae%b5%e5%8d%b3%e5%8f%af%e3%80%82%e5%bd%93%e5%89%8d%e6%94%af%e6%8c%81%20PSR-0%20PSR-4%20classmap%e8%a7%a3%e6%9e%90%e5%92%8cfiles%e5%8c%85%e5%90%ab%e3%80%82%e5%ae%98%e6%96%b9%e6%8e%a8%e8%8d%90PSR-4%e6%a0%87%e5%87%86%ef%bc%88%e6%b7%bb%e5%8a%a0%e7%b1%bb%e6%97%b6%e4%b8%8d%e9%9c%80%e8%a6%81%e9%87%8d%e6%96%b0%e7%94%9f%e6%88%90%e5%8a%a0%e8%bd%bd%e5%99%a8%ef%bc%89%e3%80%82%0aPSR-4%20Under%20the%20psr-4%20key%20you%20define%20a%20mapping%20from%20namespaces%20to%20paths%2c%20relative%20to%20the%20package%20root.%20When%20autoloading%20a%20class%20like%20Foo%5c%5cBar%5c%5cBaz%20a%20namespace%20prefix%20Foo%5c%5c%20pointing%20to%20a%20directory%20src%2f%20means%20that%20the%20autoloader%20will%20look%20for%20a%20file%20named%20src%2fBar%2fBaz.php%20and%20include%20it%20if%20present.%20Note%20that%20as%20opposed%20to%20the%20older%20PSR-0%20style%2c%20the%20prefix%20%28Foo%5c%5c%29%20is%20not%20present%20in%20the%20file%20path." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&name=composer%e4%b8%ad%e7%9a%84autoload&description=composer%e7%9a%84autoload%e5%8f%af%e4%bb%a5%e8%bd%bb%e6%9d%be%e7%9a%84%e5%ae%9e%e7%8e%b0php%e7%9a%84%e8%87%aa%e5%8a%a8%e5%8a%a0%e8%bd%bd%e3%80%82%e5%9c%a8composer.json%e4%b8%ad%e6%b7%bb%e5%8a%a0autoload%e5%ad%97%e6%ae%b5%e5%8d%b3%e5%8f%af%e3%80%82%e5%bd%93%e5%89%8d%e6%94%af%e6%8c%81%20PSR-0%20PSR-4%20classmap%e8%a7%a3%e6%9e%90%e5%92%8cfiles%e5%8c%85%e5%90%ab%e3%80%82%e5%ae%98%e6%96%b9%e6%8e%a8%e8%8d%90PSR-4%e6%a0%87%e5%87%86%ef%bc%88%e6%b7%bb%e5%8a%a0%e7%b1%bb%e6%97%b6%e4%b8%8d%e9%9c%80%e8%a6%81%e9%87%8d%e6%96%b0%e7%94%9f%e6%88%90%e5%8a%a0%e8%bd%bd%e5%99%a8%ef%bc%89%e3%80%82%0aPSR-4%20Under%20the%20psr-4%20key%20you%20define%20a%20mapping%20from%20namespaces%20to%20paths%2c%20relative%20to%20the%20package%20root.%20When%20autoloading%20a%20class%20like%20Foo%5c%5cBar%5c%5cBaz%20a%20namespace%20prefix%20Foo%5c%5c%20pointing%20to%20a%20directory%20src%2f%20means%20that%20the%20autoloader%20will%20look%20for%20a%20file%20named%20src%2fBar%2fBaz.php%20and%20include%20it%20if%20present.%20Note%20that%20as%20opposed%20to%20the%20older%20PSR-0%20style%2c%20the%20prefix%20%28Foo%5c%5c%29%20is%20not%20present%20in%20the%20file%20path." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&t=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&t=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -312,47 +312,47 @@ PSR-4 Under the psr-4 key you define a mapping from namespaces to paths, relativ
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&text=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&text=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&title=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&title=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&is_video=false&description=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&is_video=false&description=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=composer%e4%b8%ad%e7%9a%84autoload&body=Check out this article: http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=composer%e4%b8%ad%e7%9a%84autoload&body=Check out this article: http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&title=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&title=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&title=composer%e4%b8%ad%e7%9a%84autoload" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&title=composer%e4%b8%ad%e7%9a%84autoload" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&name=composer%e4%b8%ad%e7%9a%84autoload&description=composer%e7%9a%84autoload%e5%8f%af%e4%bb%a5%e8%bd%bb%e6%9d%be%e7%9a%84%e5%ae%9e%e7%8e%b0php%e7%9a%84%e8%87%aa%e5%8a%a8%e5%8a%a0%e8%bd%bd%e3%80%82%e5%9c%a8composer.json%e4%b8%ad%e6%b7%bb%e5%8a%a0autoload%e5%ad%97%e6%ae%b5%e5%8d%b3%e5%8f%af%e3%80%82%e5%bd%93%e5%89%8d%e6%94%af%e6%8c%81%20PSR-0%20PSR-4%20classmap%e8%a7%a3%e6%9e%90%e5%92%8cfiles%e5%8c%85%e5%90%ab%e3%80%82%e5%ae%98%e6%96%b9%e6%8e%a8%e8%8d%90PSR-4%e6%a0%87%e5%87%86%ef%bc%88%e6%b7%bb%e5%8a%a0%e7%b1%bb%e6%97%b6%e4%b8%8d%e9%9c%80%e8%a6%81%e9%87%8d%e6%96%b0%e7%94%9f%e6%88%90%e5%8a%a0%e8%bd%bd%e5%99%a8%ef%bc%89%e3%80%82%0aPSR-4%20Under%20the%20psr-4%20key%20you%20define%20a%20mapping%20from%20namespaces%20to%20paths%2c%20relative%20to%20the%20package%20root.%20When%20autoloading%20a%20class%20like%20Foo%5c%5cBar%5c%5cBaz%20a%20namespace%20prefix%20Foo%5c%5c%20pointing%20to%20a%20directory%20src%2f%20means%20that%20the%20autoloader%20will%20look%20for%20a%20file%20named%20src%2fBar%2fBaz.php%20and%20include%20it%20if%20present.%20Note%20that%20as%20opposed%20to%20the%20older%20PSR-0%20style%2c%20the%20prefix%20%28Foo%5c%5c%29%20is%20not%20present%20in%20the%20file%20path." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&name=composer%e4%b8%ad%e7%9a%84autoload&description=composer%e7%9a%84autoload%e5%8f%af%e4%bb%a5%e8%bd%bb%e6%9d%be%e7%9a%84%e5%ae%9e%e7%8e%b0php%e7%9a%84%e8%87%aa%e5%8a%a8%e5%8a%a0%e8%bd%bd%e3%80%82%e5%9c%a8composer.json%e4%b8%ad%e6%b7%bb%e5%8a%a0autoload%e5%ad%97%e6%ae%b5%e5%8d%b3%e5%8f%af%e3%80%82%e5%bd%93%e5%89%8d%e6%94%af%e6%8c%81%20PSR-0%20PSR-4%20classmap%e8%a7%a3%e6%9e%90%e5%92%8cfiles%e5%8c%85%e5%90%ab%e3%80%82%e5%ae%98%e6%96%b9%e6%8e%a8%e8%8d%90PSR-4%e6%a0%87%e5%87%86%ef%bc%88%e6%b7%bb%e5%8a%a0%e7%b1%bb%e6%97%b6%e4%b8%8d%e9%9c%80%e8%a6%81%e9%87%8d%e6%96%b0%e7%94%9f%e6%88%90%e5%8a%a0%e8%bd%bd%e5%99%a8%ef%bc%89%e3%80%82%0aPSR-4%20Under%20the%20psr-4%20key%20you%20define%20a%20mapping%20from%20namespaces%20to%20paths%2c%20relative%20to%20the%20package%20root.%20When%20autoloading%20a%20class%20like%20Foo%5c%5cBar%5c%5cBaz%20a%20namespace%20prefix%20Foo%5c%5c%20pointing%20to%20a%20directory%20src%2f%20means%20that%20the%20autoloader%20will%20look%20for%20a%20file%20named%20src%2fBar%2fBaz.php%20and%20include%20it%20if%20present.%20Note%20that%20as%20opposed%20to%20the%20older%20PSR-0%20style%2c%20the%20prefix%20%28Foo%5c%5c%29%20is%20not%20present%20in%20the%20file%20path." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fmootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&t=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fwww.mootao.com%2fposts%2f2016-11-05-php-composer-autoload%2f&t=composer%e4%b8%ad%e7%9a%84autoload" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

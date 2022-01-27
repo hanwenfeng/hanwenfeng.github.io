@@ -2,108 +2,108 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Fhw Site</title>
-    <link>http://mootao.com/tags/</link>
+    <link>http://www.mootao.com/tags/</link>
     <description>Recent content in Tags on Fhw Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>fhw</copyright>
-    <lastBuildDate>Sun, 27 Jun 2021 09:00:00 +0000</lastBuildDate><atom:link href="http://mootao.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Jun 2021 09:00:00 +0000</lastBuildDate><atom:link href="http://www.mootao.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>test</title>
-      <link>http://mootao.com/tags/test/</link>
+      <link>http://www.mootao.com/tags/test/</link>
       <pubDate>Sun, 27 Jun 2021 09:00:00 +0000</pubDate>
       
-      <guid>http://mootao.com/tags/test/</guid>
+      <guid>http://www.mootao.com/tags/test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Algorithms</title>
-      <link>http://mootao.com/tags/algorithms/</link>
+      <link>http://www.mootao.com/tags/algorithms/</link>
       <pubDate>Tue, 09 Jun 2020 09:00:00 +0000</pubDate>
       
-      <guid>http://mootao.com/tags/algorithms/</guid>
+      <guid>http://www.mootao.com/tags/algorithms/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming language</title>
-      <link>http://mootao.com/tags/programming-language/</link>
+      <link>http://www.mootao.com/tags/programming-language/</link>
       <pubDate>Wed, 29 Apr 2020 09:00:00 +0000</pubDate>
       
-      <guid>http://mootao.com/tags/programming-language/</guid>
+      <guid>http://www.mootao.com/tags/programming-language/</guid>
       <description></description>
     </item>
     
     <item>
       <title>racket</title>
-      <link>http://mootao.com/tags/racket/</link>
+      <link>http://www.mootao.com/tags/racket/</link>
       <pubDate>Sat, 29 Feb 2020 09:00:00 +0000</pubDate>
       
-      <guid>http://mootao.com/tags/racket/</guid>
+      <guid>http://www.mootao.com/tags/racket/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SML</title>
-      <link>http://mootao.com/tags/sml/</link>
+      <link>http://www.mootao.com/tags/sml/</link>
       <pubDate>Mon, 30 Dec 2019 09:00:00 +0000</pubDate>
       
-      <guid>http://mootao.com/tags/sml/</guid>
+      <guid>http://www.mootao.com/tags/sml/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RPA</title>
-      <link>http://mootao.com/tags/rpa/</link>
+      <link>http://www.mootao.com/tags/rpa/</link>
       <pubDate>Sat, 23 Nov 2019 09:00:00 +0000</pubDate>
       
-      <guid>http://mootao.com/tags/rpa/</guid>
+      <guid>http://www.mootao.com/tags/rpa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JavaScript</title>
-      <link>http://mootao.com/tags/javascript/</link>
+      <link>http://www.mootao.com/tags/javascript/</link>
       <pubDate>Sun, 10 Nov 2019 09:00:00 +0000</pubDate>
       
-      <guid>http://mootao.com/tags/javascript/</guid>
+      <guid>http://www.mootao.com/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vue.js</title>
-      <link>http://mootao.com/tags/vue.js/</link>
+      <link>http://www.mootao.com/tags/vue.js/</link>
       <pubDate>Fri, 25 Jan 2019 09:00:00 +0000</pubDate>
       
-      <guid>http://mootao.com/tags/vue.js/</guid>
+      <guid>http://www.mootao.com/tags/vue.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>php</title>
-      <link>http://mootao.com/tags/php/</link>
+      <link>http://www.mootao.com/tags/php/</link>
       <pubDate>Wed, 11 Jan 2017 18:39:17 +0000</pubDate>
       
-      <guid>http://mootao.com/tags/php/</guid>
+      <guid>http://www.mootao.com/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ruby</title>
-      <link>http://mootao.com/tags/ruby/</link>
+      <link>http://www.mootao.com/tags/ruby/</link>
       <pubDate>Thu, 08 Dec 2016 22:54:49 +0000</pubDate>
       
-      <guid>http://mootao.com/tags/ruby/</guid>
+      <guid>http://www.mootao.com/tags/ruby/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>http://mootao.com/tags/linux/</link>
+      <link>http://www.mootao.com/tags/linux/</link>
       <pubDate>Tue, 29 Nov 2016 21:08:52 +0000</pubDate>
       
-      <guid>http://mootao.com/tags/linux/</guid>
+      <guid>http://www.mootao.com/tags/linux/</guid>
       <description></description>
     </item>
     
