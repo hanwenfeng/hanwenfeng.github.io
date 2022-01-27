@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Bind specific arguments of a function | Fhw Site</title>
-  <link rel = 'canonical' href = 'https://www.mootao.com/posts/2019-03-08-es6-bind-trick/'>
+  <link rel = 'canonical' href = 'https://mootao.com/posts/2019-03-08-es6-bind-trick/'>
   <meta name="description" content="不积跬步，无以至千里；不积小流，无以成江海。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -19,7 +19,7 @@
 <meta property="og:description" content="To bind specific (nth) arguments of a function, we can write a decorator instead of using Function.bind():
 1function func(p1, p2, p3) { 2 console.log(p1, p2, p3); 3} 4// the binding starts after however many are passed in. 5function decorator(...bound_args) { 6 return function(...args) { 7 return func(...args, ...bound_args); 8 }; 9} 10 11// bind the last parameter 12let f = decorator(&#34;3&#34;); 13f(&#34;a&#34;, &#34;b&#34;); // a b 3 14 15// bind the last two parameter 16let f2 = decorator(&#34;2&#34;, &#34;3&#34;) 17f2(&#34;a&#34;); // a 2 3 Even if we want to bind just the nth argument, we can do as follows:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.mootao.com/posts/2019-03-08-es6-bind-trick/" />
+<meta property="og:url" content="https://mootao.com/posts/2019-03-08-es6-bind-trick/" />
 <meta property="article:published_time" content="2019-03-08T09:00:00+00:00" />
 <meta property="article:modified_time" content="2019-03-08T09:00:00+00:00" />
 
@@ -33,7 +33,7 @@
     
   
   
-  <link rel="stylesheet" href="https://www.mootao.com/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+  <link rel="stylesheet" href="https://mootao.com/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
 
   
   
@@ -45,7 +45,7 @@
   
 
   
-<link rel="icon" type="image/png" href="https://www.mootao.com/images/favicon.ico" />
+<link rel="icon" type="image/png" href="https://mootao.com/images/favicon.ico" />
 
   
   
@@ -79,14 +79,14 @@
       <ul>
         
         <li>
-          <a class="icon" href=" https://www.mootao.com/posts/2019-03-08-object-assign-with-accessor-descriptor/" aria-label="Previous">
+          <a class="icon" href=" https://mootao.com/posts/2019-03-08-object-assign-with-accessor-descriptor/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://www.mootao.com/posts/2019-03-22-js-tips/" aria-label="Next">
+          <a class="icon" href="https://mootao.com/posts/2019-03-22-js-tips/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -117,47 +117,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&text=Bind%20specific%20arguments%20of%20a%20function" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&text=Bind%20specific%20arguments%20of%20a%20function" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&title=Bind%20specific%20arguments%20of%20a%20function" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&title=Bind%20specific%20arguments%20of%20a%20function" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&is_video=false&description=Bind%20specific%20arguments%20of%20a%20function" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&is_video=false&description=Bind%20specific%20arguments%20of%20a%20function" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Bind%20specific%20arguments%20of%20a%20function&body=Check out this article: https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Bind%20specific%20arguments%20of%20a%20function&body=Check out this article: https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&title=Bind%20specific%20arguments%20of%20a%20function" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&title=Bind%20specific%20arguments%20of%20a%20function" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&title=Bind%20specific%20arguments%20of%20a%20function" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&title=Bind%20specific%20arguments%20of%20a%20function" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&name=Bind%20specific%20arguments%20of%20a%20function&description=To%20bind%20specific%20%28nth%29%20arguments%20of%20a%20function%2c%20we%20can%20write%20a%20decorator%20instead%20of%20using%20Function.bind%28%29%3a%0a1function%20func%28p1%2c%20p2%2c%20p3%29%20%7b%202%20console.log%28p1%2c%20p2%2c%20p3%29%3b%203%7d%204%2f%2f%20the%20binding%20starts%20after%20however%20many%20are%20passed%20in.%205function%20decorator%28...bound_args%29%20%7b%206%20return%20function%28...args%29%20%7b%207%20return%20func%28...args%2c%20...bound_args%29%3b%208%20%7d%3b%209%7d%2010%2011%2f%2f%20bind%20the%20last%20parameter%2012let%20f%20%3d%20decorator%28%26%2334%3b3%26%2334%3b%29%3b%2013f%28%26%2334%3ba%26%2334%3b%2c%20%26%2334%3bb%26%2334%3b%29%3b%20%2f%2f%20a%20b%203%2014%2015%2f%2f%20bind%20the%20last%20two%20parameter%2016let%20f2%20%3d%20decorator%28%26%2334%3b2%26%2334%3b%2c%20%26%2334%3b3%26%2334%3b%29%2017f2%28%26%2334%3ba%26%2334%3b%29%3b%20%2f%2f%20a%202%203%20Even%20if%20we%20want%20to%20bind%20just%20the%20nth%20argument%2c%20we%20can%20do%20as%20follows%3a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&name=Bind%20specific%20arguments%20of%20a%20function&description=To%20bind%20specific%20%28nth%29%20arguments%20of%20a%20function%2c%20we%20can%20write%20a%20decorator%20instead%20of%20using%20Function.bind%28%29%3a%0a1function%20func%28p1%2c%20p2%2c%20p3%29%20%7b%202%20console.log%28p1%2c%20p2%2c%20p3%29%3b%203%7d%204%2f%2f%20the%20binding%20starts%20after%20however%20many%20are%20passed%20in.%205function%20decorator%28...bound_args%29%20%7b%206%20return%20function%28...args%29%20%7b%207%20return%20func%28...args%2c%20...bound_args%29%3b%208%20%7d%3b%209%7d%2010%2011%2f%2f%20bind%20the%20last%20parameter%2012let%20f%20%3d%20decorator%28%26%2334%3b3%26%2334%3b%29%3b%2013f%28%26%2334%3ba%26%2334%3b%2c%20%26%2334%3bb%26%2334%3b%29%3b%20%2f%2f%20a%20b%203%2014%2015%2f%2f%20bind%20the%20last%20two%20parameter%2016let%20f2%20%3d%20decorator%28%26%2334%3b2%26%2334%3b%2c%20%26%2334%3b3%26%2334%3b%29%2017f2%28%26%2334%3ba%26%2334%3b%29%3b%20%2f%2f%20a%202%203%20Even%20if%20we%20want%20to%20bind%20just%20the%20nth%20argument%2c%20we%20can%20do%20as%20follows%3a" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&t=Bind%20specific%20arguments%20of%20a%20function" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&t=Bind%20specific%20arguments%20of%20a%20function" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -283,47 +283,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&text=Bind%20specific%20arguments%20of%20a%20function" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&text=Bind%20specific%20arguments%20of%20a%20function" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&title=Bind%20specific%20arguments%20of%20a%20function" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&title=Bind%20specific%20arguments%20of%20a%20function" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&is_video=false&description=Bind%20specific%20arguments%20of%20a%20function" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&is_video=false&description=Bind%20specific%20arguments%20of%20a%20function" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Bind%20specific%20arguments%20of%20a%20function&body=Check out this article: https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Bind%20specific%20arguments%20of%20a%20function&body=Check out this article: https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&title=Bind%20specific%20arguments%20of%20a%20function" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&title=Bind%20specific%20arguments%20of%20a%20function" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&title=Bind%20specific%20arguments%20of%20a%20function" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&title=Bind%20specific%20arguments%20of%20a%20function" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&name=Bind%20specific%20arguments%20of%20a%20function&description=To%20bind%20specific%20%28nth%29%20arguments%20of%20a%20function%2c%20we%20can%20write%20a%20decorator%20instead%20of%20using%20Function.bind%28%29%3a%0a1function%20func%28p1%2c%20p2%2c%20p3%29%20%7b%202%20console.log%28p1%2c%20p2%2c%20p3%29%3b%203%7d%204%2f%2f%20the%20binding%20starts%20after%20however%20many%20are%20passed%20in.%205function%20decorator%28...bound_args%29%20%7b%206%20return%20function%28...args%29%20%7b%207%20return%20func%28...args%2c%20...bound_args%29%3b%208%20%7d%3b%209%7d%2010%2011%2f%2f%20bind%20the%20last%20parameter%2012let%20f%20%3d%20decorator%28%26%2334%3b3%26%2334%3b%29%3b%2013f%28%26%2334%3ba%26%2334%3b%2c%20%26%2334%3bb%26%2334%3b%29%3b%20%2f%2f%20a%20b%203%2014%2015%2f%2f%20bind%20the%20last%20two%20parameter%2016let%20f2%20%3d%20decorator%28%26%2334%3b2%26%2334%3b%2c%20%26%2334%3b3%26%2334%3b%29%2017f2%28%26%2334%3ba%26%2334%3b%29%3b%20%2f%2f%20a%202%203%20Even%20if%20we%20want%20to%20bind%20just%20the%20nth%20argument%2c%20we%20can%20do%20as%20follows%3a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&name=Bind%20specific%20arguments%20of%20a%20function&description=To%20bind%20specific%20%28nth%29%20arguments%20of%20a%20function%2c%20we%20can%20write%20a%20decorator%20instead%20of%20using%20Function.bind%28%29%3a%0a1function%20func%28p1%2c%20p2%2c%20p3%29%20%7b%202%20console.log%28p1%2c%20p2%2c%20p3%29%3b%203%7d%204%2f%2f%20the%20binding%20starts%20after%20however%20many%20are%20passed%20in.%205function%20decorator%28...bound_args%29%20%7b%206%20return%20function%28...args%29%20%7b%207%20return%20func%28...args%2c%20...bound_args%29%3b%208%20%7d%3b%209%7d%2010%2011%2f%2f%20bind%20the%20last%20parameter%2012let%20f%20%3d%20decorator%28%26%2334%3b3%26%2334%3b%29%3b%2013f%28%26%2334%3ba%26%2334%3b%2c%20%26%2334%3bb%26%2334%3b%29%3b%20%2f%2f%20a%20b%203%2014%2015%2f%2f%20bind%20the%20last%20two%20parameter%2016let%20f2%20%3d%20decorator%28%26%2334%3b2%26%2334%3b%2c%20%26%2334%3b3%26%2334%3b%29%2017f2%28%26%2334%3ba%26%2334%3b%29%3b%20%2f%2f%20a%202%203%20Even%20if%20we%20want%20to%20bind%20just%20the%20nth%20argument%2c%20we%20can%20do%20as%20follows%3a" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.mootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&t=Bind%20specific%20arguments%20of%20a%20function" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fmootao.com%2fposts%2f2019-03-08-es6-bind-trick%2f&t=Bind%20specific%20arguments%20of%20a%20function" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
