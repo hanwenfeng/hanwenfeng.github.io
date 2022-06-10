@@ -4,12 +4,37 @@
   
   <url>
     <loc>http://www.mootao.com/categories/</loc>
-    <lastmod>2022-01-28T12:00:00+00:00</lastmod>
+    <lastmod>2022-06-10T09:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.mootao.com/</loc>
-    <lastmod>2022-01-28T12:00:00+00:00</lastmod>
+    <lastmod>2022-06-10T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/tags/oracle/</loc>
+    <lastmod>2022-06-10T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/categories/oracle/</loc>
+    <lastmod>2022-06-10T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/posts/oracle-dmp-impdp-expdp/</loc>
+    <lastmod>2022-06-10T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/posts/</loc>
+    <lastmod>2022-06-10T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/tags/</loc>
+    <lastmod>2022-06-10T09:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -24,16 +49,6 @@
   
   <url>
     <loc>http://www.mootao.com/posts/linux-java8-set/</loc>
-    <lastmod>2022-01-28T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.mootao.com/posts/</loc>
-    <lastmod>2022-01-28T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.mootao.com/tags/</loc>
     <lastmod>2022-01-28T12:00:00+00:00</lastmod>
   </url>
   

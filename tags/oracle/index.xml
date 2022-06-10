@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oracle on Fhw Site</title>
+    <link>http://www.mootao.com/tags/oracle/</link>
+    <description>Recent content in Oracle on Fhw Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>fhw</copyright>
+    <lastBuildDate>Fri, 10 Jun 2022 09:00:00 +0000</lastBuildDate><atom:link href="http://www.mootao.com/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oracle数据库dmp文件导入导出</title>
+      <link>http://www.mootao.com/posts/oracle-dmp-impdp-expdp/</link>
+      <pubDate>Fri, 10 Jun 2022 09:00:00 +0000</pubDate>
+      
+      <guid>http://www.mootao.com/posts/oracle-dmp-impdp-expdp/</guid>
+      <description>1、登录Oracle所在的机器、创建一个存放导入文件的目录 (根据实际情况修改) cd /home/oracle mkdir dir_impdp  2、连接Oracle, 给用户授权 sqlplus / as sysdba  3、在Oracle中创建目录并授权给用户 SQL&amp;gt; create directory dir_impdp as &amp;#39;/home/oracle/dir_impdp&amp;#39;; SQL&amp;gt; Grant read,write on directory dir_impdp to 需要导入数据的用户;  4、退出Oracle SQL&amp;gt; exit;  5、将dmp文件和log文件放到上面创建的目录中, 然后执行下面命令导入 (根据实际情况修改参数) impdp 用户名/密码@ORCL directory=dir_impdp dumpfile=JR_RECYCLE.dmp logfile=JR_RECYCLE.log schemas=JR_RECYCLE job_name=my_job remap_schema=原schema:目标schema table_exists_action=replace  示例: JR_RECYCLE 用户 expdp 导出 JR_RECYCLE.dmp 文件， 执行导入 JR_RECYCLE_S1 用户 操作命令 impdp JR_RECYCLE_S1/JR_RECYCLE_S1@ORCL directory=dir_impdp dumpfile=JR_RECYCLE.dmp logfile=JR_RECYCLE.log schemas=JR_RECYCLE job_name=my_job remap_schema=JR_RECYCLE:JR_RECYCLE_S1 table_exists_action=replace  6、执行下面命令导出dmp文件和log文件 (根据实际情况修改参数) expdp 用户名/密码@ORCL directory=dir_impdp schemas=JR_RECYCLE dumpfile=JR_RECYCLE.</description>
+    </item>
+    
+  </channel>
+</rss>

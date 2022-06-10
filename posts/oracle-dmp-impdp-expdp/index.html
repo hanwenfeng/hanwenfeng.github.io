@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="../../js/cactus.js"></script>
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Oracle数据库dmp文件导入导出 | Fhw Site</title>
+  <link rel = 'canonical' href = 'http://www.mootao.com/posts/oracle-dmp-impdp-expdp/'>
+  <meta name="description" content="不积跬步，无以至千里；不积小流，无以成江海。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Oracle数据库dmp文件导入导出" />
+<meta property="og:description" content="1、登录Oracle所在的机器、创建一个存放导入文件的目录 (根据实际情况修改) cd /home/oracle mkdir dir_impdp  2、连接Oracle, 给用户授权 sqlplus / as sysdba  3、在Oracle中创建目录并授权给用户 SQL&gt; create directory dir_impdp as &#39;/home/oracle/dir_impdp&#39;; SQL&gt; Grant read,write on directory dir_impdp to 需要导入数据的用户;  4、退出Oracle SQL&gt; exit;  5、将dmp文件和log文件放到上面创建的目录中, 然后执行下面命令导入 (根据实际情况修改参数) impdp 用户名/密码@ORCL directory=dir_impdp dumpfile=JR_RECYCLE.dmp logfile=JR_RECYCLE.log schemas=JR_RECYCLE job_name=my_job remap_schema=原schema:目标schema table_exists_action=replace  示例: JR_RECYCLE 用户 expdp 导出 JR_RECYCLE.dmp 文件， 执行导入 JR_RECYCLE_S1 用户 操作命令 impdp JR_RECYCLE_S1/JR_RECYCLE_S1@ORCL directory=dir_impdp dumpfile=JR_RECYCLE.dmp logfile=JR_RECYCLE.log schemas=JR_RECYCLE job_name=my_job remap_schema=JR_RECYCLE:JR_RECYCLE_S1 table_exists_action=replace  6、执行下面命令导出dmp文件和log文件 (根据实际情况修改参数) expdp 用户名/密码@ORCL directory=dir_impdp schemas=JR_RECYCLE dumpfile=JR_RECYCLE." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.mootao.com/posts/oracle-dmp-impdp-expdp/" />
+<meta property="article:published_time" content="2022-06-10T09:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-10T09:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Oracle数据库dmp文件导入导出"/>
+<meta name="twitter:description" content="1、登录Oracle所在的机器、创建一个存放导入文件的目录 (根据实际情况修改) cd /home/oracle mkdir dir_impdp  2、连接Oracle, 给用户授权 sqlplus / as sysdba  3、在Oracle中创建目录并授权给用户 SQL&gt; create directory dir_impdp as &#39;/home/oracle/dir_impdp&#39;; SQL&gt; Grant read,write on directory dir_impdp to 需要导入数据的用户;  4、退出Oracle SQL&gt; exit;  5、将dmp文件和log文件放到上面创建的目录中, 然后执行下面命令导入 (根据实际情况修改参数) impdp 用户名/密码@ORCL directory=dir_impdp dumpfile=JR_RECYCLE.dmp logfile=JR_RECYCLE.log schemas=JR_RECYCLE job_name=my_job remap_schema=原schema:目标schema table_exists_action=replace  示例: JR_RECYCLE 用户 expdp 导出 JR_RECYCLE.dmp 文件， 执行导入 JR_RECYCLE_S1 用户 操作命令 impdp JR_RECYCLE_S1/JR_RECYCLE_S1@ORCL directory=dir_impdp dumpfile=JR_RECYCLE.dmp logfile=JR_RECYCLE.log schemas=JR_RECYCLE job_name=my_job remap_schema=JR_RECYCLE:JR_RECYCLE_S1 table_exists_action=replace  6、执行下面命令导出dmp文件和log文件 (根据实际情况修改参数) expdp 用户名/密码@ORCL directory=dir_impdp schemas=JR_RECYCLE dumpfile=JR_RECYCLE."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="http://www.mootao.com/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="http://www.mootao.com/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" http://www.mootao.com/posts/linux-java8-set/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share" style="display: none;"> 
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&is_video=false&description=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba&body=Check out this article: http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&name=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba&description=1%e3%80%81%e7%99%bb%e5%bd%95Oracle%e6%89%80%e5%9c%a8%e7%9a%84%e6%9c%ba%e5%99%a8%e3%80%81%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%ad%98%e6%94%be%e5%af%bc%e5%85%a5%e6%96%87%e4%bb%b6%e7%9a%84%e7%9b%ae%e5%bd%95%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%29%20cd%20%2fhome%2foracle%20mkdir%20dir_impdp%20%202%e3%80%81%e8%bf%9e%e6%8e%a5Oracle%2c%20%e7%bb%99%e7%94%a8%e6%88%b7%e6%8e%88%e6%9d%83%20sqlplus%20%2f%20as%20sysdba%20%203%e3%80%81%e5%9c%a8Oracle%e4%b8%ad%e5%88%9b%e5%bb%ba%e7%9b%ae%e5%bd%95%e5%b9%b6%e6%8e%88%e6%9d%83%e7%bb%99%e7%94%a8%e6%88%b7%20SQL%26gt%3b%20create%20directory%20dir_impdp%20as%20%26%2339%3b%2fhome%2foracle%2fdir_impdp%26%2339%3b%3b%20SQL%26gt%3b%20Grant%20read%2cwrite%20on%20directory%20dir_impdp%20to%20%e9%9c%80%e8%a6%81%e5%af%bc%e5%85%a5%e6%95%b0%e6%8d%ae%e7%9a%84%e7%94%a8%e6%88%b7%3b%20%204%e3%80%81%e9%80%80%e5%87%baOracle%20SQL%26gt%3b%20exit%3b%20%205%e3%80%81%e5%b0%86dmp%e6%96%87%e4%bb%b6%e5%92%8clog%e6%96%87%e4%bb%b6%e6%94%be%e5%88%b0%e4%b8%8a%e9%9d%a2%e5%88%9b%e5%bb%ba%e7%9a%84%e7%9b%ae%e5%bd%95%e4%b8%ad%2c%20%e7%84%b6%e5%90%8e%e6%89%a7%e8%a1%8c%e4%b8%8b%e9%9d%a2%e5%91%bd%e4%bb%a4%e5%af%bc%e5%85%a5%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%e5%8f%82%e6%95%b0%29%20impdp%20%e7%94%a8%e6%88%b7%e5%90%8d%2f%e5%af%86%e7%a0%81%40ORCL%20directory%3ddir_impdp%20dumpfile%3dJR_RECYCLE.dmp%20logfile%3dJR_RECYCLE.log%20schemas%3dJR_RECYCLE%20job_name%3dmy_job%20remap_schema%3d%e5%8e%9fschema%3a%e7%9b%ae%e6%a0%87schema%20table_exists_action%3dreplace%20%20%e7%a4%ba%e4%be%8b%3a%20JR_RECYCLE%20%e7%94%a8%e6%88%b7%20expdp%20%e5%af%bc%e5%87%ba%20JR_RECYCLE.dmp%20%e6%96%87%e4%bb%b6%ef%bc%8c%20%e6%89%a7%e8%a1%8c%e5%af%bc%e5%85%a5%20JR_RECYCLE_S1%20%e7%94%a8%e6%88%b7%20%e6%93%8d%e4%bd%9c%e5%91%bd%e4%bb%a4%20impdp%20JR_RECYCLE_S1%2fJR_RECYCLE_S1%40ORCL%20directory%3ddir_impdp%20dumpfile%3dJR_RECYCLE.dmp%20logfile%3dJR_RECYCLE.log%20schemas%3dJR_RECYCLE%20job_name%3dmy_job%20remap_schema%3dJR_RECYCLE%3aJR_RECYCLE_S1%20table_exists_action%3dreplace%20%206%e3%80%81%e6%89%a7%e8%a1%8c%e4%b8%8b%e9%9d%a2%e5%91%bd%e4%bb%a4%e5%af%bc%e5%87%badmp%e6%96%87%e4%bb%b6%e5%92%8clog%e6%96%87%e4%bb%b6%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%e5%8f%82%e6%95%b0%29%20expdp%20%e7%94%a8%e6%88%b7%e5%90%8d%2f%e5%af%86%e7%a0%81%40ORCL%20directory%3ddir_impdp%20schemas%3dJR_RECYCLE%20dumpfile%3dJR_RECYCLE." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&t=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1登录oracle所在的机器创建一个存放导入文件的目录-根据实际情况修改">1、登录Oracle所在的机器、创建一个存放导入文件的目录 (根据实际情况修改)</a></li>
+            <li><a href="#2连接oracle-给用户授权">2、连接Oracle, 给用户授权</a></li>
+            <li><a href="#3在oracle中创建目录并授权给用户">3、在Oracle中创建目录并授权给用户</a></li>
+            <li><a href="#4退出oracle">4、退出Oracle</a></li>
+            <li><a href="#5将dmp文件和log文件放到上面创建的目录中-然后执行下面命令导入-根据实际情况修改参数">5、将dmp文件和log文件放到上面创建的目录中, 然后执行下面命令导入 (根据实际情况修改参数)</a></li>
+            <li><a href="#示例">示例:</a></li>
+            <li><a href="#6执行下面命令导出dmp文件和log文件-根据实际情况修改参数">6、执行下面命令导出dmp文件和log文件 (根据实际情况修改参数)</a></li>
+            <li><a href="#示例-1">示例:</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Oracle数据库dmp文件导入导出
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-06-10 09:00:00 &#43;0000 UTC" itemprop="datePublished">2022-06-10</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          2 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/oracle">Oracle</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/oracle" rel="tag">Oracle</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h4 id="1登录oracle所在的机器创建一个存放导入文件的目录-根据实际情况修改">1、登录Oracle所在的机器、创建一个存放导入文件的目录 (根据实际情况修改)</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">cd <span style="color:#ff79c6">/</span>home<span style="color:#ff79c6">/</span>oracle   
+mkdir dir_impdp   
+</code></pre></div>
+<h4 id="2连接oracle-给用户授权">2、连接Oracle, 给用户授权</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">sqlplus <span style="color:#ff79c6">/</span> as sysdba
+</code></pre></div>
+<h4 id="3在oracle中创建目录并授权给用户">3、在Oracle中创建目录并授权给用户</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">SQL<span style="color:#ff79c6">&gt;</span> create directory dir_impdp as <span style="color:#f1fa8c">&#39;/home/oracle/dir_impdp&#39;</span>;   
+SQL<span style="color:#ff79c6">&gt;</span> Grant read,write on directory dir_impdp to 需要导入数据的用户;
+</code></pre></div>
+<h4 id="4退出oracle">4、退出Oracle</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">SQL<span style="color:#ff79c6">&gt;</span> exit;
+</code></pre></div>
+<h4 id="5将dmp文件和log文件放到上面创建的目录中-然后执行下面命令导入-根据实际情况修改参数">5、将dmp文件和log文件放到上面创建的目录中, 然后执行下面命令导入 (根据实际情况修改参数)</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">impdp 用户名<span style="color:#ff79c6">/</span>密码@ORCL directory<span style="color:#ff79c6">=</span>dir_impdp dumpfile<span style="color:#ff79c6">=</span>JR_RECYCLE.dmp logfile<span style="color:#ff79c6">=</span>JR_RECYCLE.log  schemas<span style="color:#ff79c6">=</span>JR_RECYCLE job_name<span style="color:#ff79c6">=</span>my_job remap_schema<span style="color:#ff79c6">=</span>原schema<span style="color:#ff79c6">:</span>目标schema table_exists_action<span style="color:#ff79c6">=</span>replace
+</code></pre></div>
+<h4 id="示例">示例:</h4>
+<h6 id="jr_recycle-用户-expdp-导出-jr_recycledmp-文件-执行导入-jr_recycle_s1-用户-操作命令">JR_RECYCLE 用户 expdp 导出 JR_RECYCLE.dmp 文件， 执行导入 JR_RECYCLE_S1 用户 操作命令</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">impdp JR_RECYCLE_S1<span style="color:#ff79c6">/</span>JR_RECYCLE_S1@ORCL directory<span style="color:#ff79c6">=</span>dir_impdp dumpfile<span style="color:#ff79c6">=</span>JR_RECYCLE.dmp logfile<span style="color:#ff79c6">=</span>JR_RECYCLE.log  schemas<span style="color:#ff79c6">=</span>JR_RECYCLE job_name<span style="color:#ff79c6">=</span>my_job remap_schema<span style="color:#ff79c6">=</span>JR_RECYCLE<span style="color:#ff79c6">:</span>JR_RECYCLE_S1 table_exists_action<span style="color:#ff79c6">=</span>replace
+</code></pre></div>
+<h4 id="6执行下面命令导出dmp文件和log文件-根据实际情况修改参数">6、执行下面命令导出dmp文件和log文件 (根据实际情况修改参数)</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">expdp  用户名<span style="color:#ff79c6">/</span>密码@ORCL  directory<span style="color:#ff79c6">=</span>dir_impdp  schemas<span style="color:#ff79c6">=</span>JR_RECYCLE dumpfile<span style="color:#ff79c6">=</span>JR_RECYCLE.dmp  logfile<span style="color:#ff79c6">=</span>JR_RECYCLE.log  job_name<span style="color:#ff79c6">=</span>my_job
+</code></pre></div>
+<h4 id="示例-1">示例:</h4>
+<h6 id="jr_recycle-用户-expdp-导出-jr_recycledmpjr_recyclelog-操作命令">JR_RECYCLE 用户 expdp 导出 JR_RECYCLE.dmp、JR_RECYCLE.log 操作命令</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">expdp  JR_RECYCLE<span style="color:#ff79c6">/</span>JR_RECYCLE@ORCL  directory<span style="color:#ff79c6">=</span>dir_impdp  schemas<span style="color:#ff79c6">=</span>JR_RECYCLE dumpfile<span style="color:#ff79c6">=</span>JR_RECYCLE.dmp  logfile<span style="color:#ff79c6">=</span>JR_RECYCLE.log  job_name<span style="color:#ff79c6">=</span>my_job
+</code></pre></div>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1登录oracle所在的机器创建一个存放导入文件的目录-根据实际情况修改">1、登录Oracle所在的机器、创建一个存放导入文件的目录 (根据实际情况修改)</a></li>
+            <li><a href="#2连接oracle-给用户授权">2、连接Oracle, 给用户授权</a></li>
+            <li><a href="#3在oracle中创建目录并授权给用户">3、在Oracle中创建目录并授权给用户</a></li>
+            <li><a href="#4退出oracle">4、退出Oracle</a></li>
+            <li><a href="#5将dmp文件和log文件放到上面创建的目录中-然后执行下面命令导入-根据实际情况修改参数">5、将dmp文件和log文件放到上面创建的目录中, 然后执行下面命令导入 (根据实际情况修改参数)</a></li>
+            <li><a href="#示例">示例:</a></li>
+            <li><a href="#6执行下面命令导出dmp文件和log文件-根据实际情况修改参数">6、执行下面命令导出dmp文件和log文件 (根据实际情况修改参数)</a></li>
+            <li><a href="#示例-1">示例:</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&is_video=false&description=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba&body=Check out this article: http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&name=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba&description=1%e3%80%81%e7%99%bb%e5%bd%95Oracle%e6%89%80%e5%9c%a8%e7%9a%84%e6%9c%ba%e5%99%a8%e3%80%81%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%ad%98%e6%94%be%e5%af%bc%e5%85%a5%e6%96%87%e4%bb%b6%e7%9a%84%e7%9b%ae%e5%bd%95%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%29%20cd%20%2fhome%2foracle%20mkdir%20dir_impdp%20%202%e3%80%81%e8%bf%9e%e6%8e%a5Oracle%2c%20%e7%bb%99%e7%94%a8%e6%88%b7%e6%8e%88%e6%9d%83%20sqlplus%20%2f%20as%20sysdba%20%203%e3%80%81%e5%9c%a8Oracle%e4%b8%ad%e5%88%9b%e5%bb%ba%e7%9b%ae%e5%bd%95%e5%b9%b6%e6%8e%88%e6%9d%83%e7%bb%99%e7%94%a8%e6%88%b7%20SQL%26gt%3b%20create%20directory%20dir_impdp%20as%20%26%2339%3b%2fhome%2foracle%2fdir_impdp%26%2339%3b%3b%20SQL%26gt%3b%20Grant%20read%2cwrite%20on%20directory%20dir_impdp%20to%20%e9%9c%80%e8%a6%81%e5%af%bc%e5%85%a5%e6%95%b0%e6%8d%ae%e7%9a%84%e7%94%a8%e6%88%b7%3b%20%204%e3%80%81%e9%80%80%e5%87%baOracle%20SQL%26gt%3b%20exit%3b%20%205%e3%80%81%e5%b0%86dmp%e6%96%87%e4%bb%b6%e5%92%8clog%e6%96%87%e4%bb%b6%e6%94%be%e5%88%b0%e4%b8%8a%e9%9d%a2%e5%88%9b%e5%bb%ba%e7%9a%84%e7%9b%ae%e5%bd%95%e4%b8%ad%2c%20%e7%84%b6%e5%90%8e%e6%89%a7%e8%a1%8c%e4%b8%8b%e9%9d%a2%e5%91%bd%e4%bb%a4%e5%af%bc%e5%85%a5%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%e5%8f%82%e6%95%b0%29%20impdp%20%e7%94%a8%e6%88%b7%e5%90%8d%2f%e5%af%86%e7%a0%81%40ORCL%20directory%3ddir_impdp%20dumpfile%3dJR_RECYCLE.dmp%20logfile%3dJR_RECYCLE.log%20schemas%3dJR_RECYCLE%20job_name%3dmy_job%20remap_schema%3d%e5%8e%9fschema%3a%e7%9b%ae%e6%a0%87schema%20table_exists_action%3dreplace%20%20%e7%a4%ba%e4%be%8b%3a%20JR_RECYCLE%20%e7%94%a8%e6%88%b7%20expdp%20%e5%af%bc%e5%87%ba%20JR_RECYCLE.dmp%20%e6%96%87%e4%bb%b6%ef%bc%8c%20%e6%89%a7%e8%a1%8c%e5%af%bc%e5%85%a5%20JR_RECYCLE_S1%20%e7%94%a8%e6%88%b7%20%e6%93%8d%e4%bd%9c%e5%91%bd%e4%bb%a4%20impdp%20JR_RECYCLE_S1%2fJR_RECYCLE_S1%40ORCL%20directory%3ddir_impdp%20dumpfile%3dJR_RECYCLE.dmp%20logfile%3dJR_RECYCLE.log%20schemas%3dJR_RECYCLE%20job_name%3dmy_job%20remap_schema%3dJR_RECYCLE%3aJR_RECYCLE_S1%20table_exists_action%3dreplace%20%206%e3%80%81%e6%89%a7%e8%a1%8c%e4%b8%8b%e9%9d%a2%e5%91%bd%e4%bb%a4%e5%af%bc%e5%87%badmp%e6%96%87%e4%bb%b6%e5%92%8clog%e6%96%87%e4%bb%b6%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%e5%8f%82%e6%95%b0%29%20expdp%20%e7%94%a8%e6%88%b7%e5%90%8d%2f%e5%af%86%e7%a0%81%40ORCL%20directory%3ddir_impdp%20schemas%3dJR_RECYCLE%20dumpfile%3dJR_RECYCLE." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&t=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  fhw 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>
