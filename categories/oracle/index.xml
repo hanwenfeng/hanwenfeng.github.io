@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>fhw</copyright>
-    <lastBuildDate>Fri, 10 Jun 2022 09:00:00 +0000</lastBuildDate><atom:link href="http://www.mootao.com/categories/oracle/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jun 2022 23:00:00 +0000</lastBuildDate><atom:link href="http://www.mootao.com/categories/oracle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oracle数据库修改最大连接数</title>
+      <link>http://www.mootao.com/posts/oracle-processes/</link>
+      <pubDate>Mon, 13 Jun 2022 23:00:00 +0000</pubDate>
+      
+      <guid>http://www.mootao.com/posts/oracle-processes/</guid>
+      <description>1.切换Oracle用户 sh-4.2# su - oracle Last login: Tue Jun 14 15:42:47 UTC 2022 on pts/0 [oracle@af47d363d2a2 ~]$  2.以system用户身份登录数据库 [oracle@af47d363d2a2 ~]$ sqlplus / as sysdba SQL*Plus: Release 11.2.0.1.0 Production on Tue Jun 14 15:58:52 2022 Copyright (c) 1982, 2009, Oracle. All rights reserved. Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production With the Partitioning, OLAP, Data Mining and Real Application Testing options SQL&amp;gt;  或： [oracle@af47d363d2a2 ~]$ sqlplus /nolog SQL*Plus: Release 11.</description>
+    </item>
+    
     <item>
       <title>Oracle数据库dmp文件导入导出</title>
       <link>http://www.mootao.com/posts/oracle-dmp-impdp-expdp/</link>
