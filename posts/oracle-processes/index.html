@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="../../js/cactus.js"></script>
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Oracle数据库修改最大连接数 | Fhw Site</title>
+  <link rel = 'canonical' href = 'http://www.mootao.com/posts/oracle-processes/'>
+  <meta name="description" content="不积跬步，无以至千里；不积小流，无以成江海。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Oracle数据库修改最大连接数" />
+<meta property="og:description" content="1.切换Oracle用户 sh-4.2# su - oracle Last login: Tue Jun 14 15:42:47 UTC 2022 on pts/0 [oracle@af47d363d2a2 ~]$  2.以system用户身份登录数据库 [oracle@af47d363d2a2 ~]$ sqlplus / as sysdba SQL*Plus: Release 11.2.0.1.0 Production on Tue Jun 14 15:58:52 2022 Copyright (c) 1982, 2009, Oracle. All rights reserved. Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production With the Partitioning, OLAP, Data Mining and Real Application Testing options SQL&gt;  或： [oracle@af47d363d2a2 ~]$ sqlplus /nolog SQL*Plus: Release 11." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.mootao.com/posts/oracle-processes/" />
+<meta property="article:published_time" content="2022-06-13T23:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-13T23:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Oracle数据库修改最大连接数"/>
+<meta name="twitter:description" content="1.切换Oracle用户 sh-4.2# su - oracle Last login: Tue Jun 14 15:42:47 UTC 2022 on pts/0 [oracle@af47d363d2a2 ~]$  2.以system用户身份登录数据库 [oracle@af47d363d2a2 ~]$ sqlplus / as sysdba SQL*Plus: Release 11.2.0.1.0 Production on Tue Jun 14 15:58:52 2022 Copyright (c) 1982, 2009, Oracle. All rights reserved. Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production With the Partitioning, OLAP, Data Mining and Real Application Testing options SQL&gt;  或： [oracle@af47d363d2a2 ~]$ sqlplus /nolog SQL*Plus: Release 11."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="http://www.mootao.com/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="http://www.mootao.com/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" http://www.mootao.com/posts/oracle-dmp-impdp-expdp/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share" style="display: none;"> 
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&is_video=false&description=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0&body=Check out this article: http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&name=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0&description=1.%e5%88%87%e6%8d%a2Oracle%e7%94%a8%e6%88%b7%20sh-4.2%23%20su%20-%20oracle%20Last%20login%3a%20Tue%20Jun%2014%2015%3a42%3a47%20UTC%202022%20on%20pts%2f0%20%5boracle%40af47d363d2a2%20~%5d%24%20%202.%e4%bb%a5system%e7%94%a8%e6%88%b7%e8%ba%ab%e4%bb%bd%e7%99%bb%e5%bd%95%e6%95%b0%e6%8d%ae%e5%ba%93%20%5boracle%40af47d363d2a2%20~%5d%24%20sqlplus%20%2f%20as%20sysdba%20SQL%2aPlus%3a%20Release%2011.2.0.1.0%20Production%20on%20Tue%20Jun%2014%2015%3a58%3a52%202022%20Copyright%20%28c%29%201982%2c%202009%2c%20Oracle.%20All%20rights%20reserved.%20Connected%20to%3a%20Oracle%20Database%2011g%20Enterprise%20Edition%20Release%2011.2.0.1.0%20-%2064bit%20Production%20With%20the%20Partitioning%2c%20OLAP%2c%20Data%20Mining%20and%20Real%20Application%20Testing%20options%20SQL%26gt%3b%20%20%e6%88%96%ef%bc%9a%20%5boracle%40af47d363d2a2%20~%5d%24%20sqlplus%20%2fnolog%20SQL%2aPlus%3a%20Release%2011." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&t=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1切换oracle用户">1.切换Oracle用户</a></li>
+    <li><a href="#2以system用户身份登录数据库">2.以system用户身份登录数据库</a></li>
+    <li><a href="#3查询数据库允许的最大连接数">3.查询数据库允许的最大连接数</a></li>
+    <li><a href="#4修改数据库允许的最大连接数">4.修改数据库允许的最大连接数</a></li>
+    <li><a href="#5关闭oracle服务">5.关闭Oracle服务</a></li>
+    <li><a href="#6开启oracle服务">6.开启Oracle服务</a></li>
+    <li><a href="#7查询数据库允许的最大连接数是否生效">7.查询数据库允许的最大连接数是否生效</a></li>
+    <li><a href="#8退出oracle数据库">8.退出Oracle数据库</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Oracle数据库修改最大连接数
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-06-13 23:00:00 &#43;0000 UTC" itemprop="datePublished">2022-06-13</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          2 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/oracle">Oracle</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/oracle" rel="tag">Oracle</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h2 id="1切换oracle用户">1.切换Oracle用户</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">sh<span style="color:#ff79c6">-</span><span style="color:#bd93f9">4.2</span># su <span style="color:#ff79c6">-</span> oracle
+Last login<span style="color:#ff79c6">:</span> Tue Jun <span style="color:#bd93f9">14</span> <span style="color:#bd93f9">15</span><span style="color:#ff79c6">:</span><span style="color:#bd93f9">42</span><span style="color:#ff79c6">:</span><span style="color:#bd93f9">47</span> UTC <span style="color:#bd93f9">2022</span> on pts<span style="color:#ff79c6">/</span><span style="color:#bd93f9">0</span>
+[oracle@af47d363d2a2 <span style="color:#ff79c6">~</span>]$ 
+</code></pre></div>
+<h2 id="2以system用户身份登录数据库">2.以system用户身份登录数据库</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">[oracle@af47d363d2a2 <span style="color:#ff79c6">~</span>]$ sqlplus <span style="color:#ff79c6">/</span> as sysdba
+
+SQL<span style="color:#ff79c6">*</span>Plus<span style="color:#ff79c6">:</span> Release <span style="color:#bd93f9">11.2.0.1.0</span> Production on Tue Jun <span style="color:#bd93f9">14</span> <span style="color:#bd93f9">15</span><span style="color:#ff79c6">:</span><span style="color:#bd93f9">58</span><span style="color:#ff79c6">:</span><span style="color:#bd93f9">52</span> <span style="color:#bd93f9">2022</span>
+
+Copyright (c) <span style="color:#bd93f9">1982</span>, <span style="color:#bd93f9">2009</span>, Oracle.  All rights reserved.
+
+
+Connected to<span style="color:#ff79c6">:</span>
+Oracle Database <span style="color:#bd93f9">11</span>g Enterprise Edition Release <span style="color:#bd93f9">11.2.0.1.0</span> <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">64</span>bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+SQL<span style="color:#ff79c6">&gt;</span> 
+</code></pre></div>
+<p>或：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">[oracle@af47d363d2a2 <span style="color:#ff79c6">~</span>]$ sqlplus <span style="color:#ff79c6">/</span>nolog
+
+SQL<span style="color:#ff79c6">*</span>Plus<span style="color:#ff79c6">:</span> Release <span style="color:#bd93f9">11.2.0.1.0</span> Production on Tue Jun <span style="color:#bd93f9">14</span> <span style="color:#bd93f9">16</span><span style="color:#ff79c6">:</span><span style="color:#bd93f9">11</span><span style="color:#ff79c6">:</span><span style="color:#bd93f9">00</span> <span style="color:#bd93f9">2022</span>
+
+Copyright (c) <span style="color:#bd93f9">1982</span>, <span style="color:#bd93f9">2009</span>, Oracle.  All rights reserved.
+
+SQL<span style="color:#ff79c6">&gt;</span> conn <span style="color:#ff79c6">/</span>as sysdba
+Connected.
+SQL<span style="color:#ff79c6">&gt;</span> 
+</code></pre></div></p>
+<h2 id="3查询数据库允许的最大连接数">3.查询数据库允许的最大连接数</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">SQL<span style="color:#ff79c6">&gt;</span> select value from v$parameter where name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;processes&#39;</span>;
+
+VALUE
+<span style="color:#ff79c6">--------------------------------------------------------------------------------</span>
+<span style="color:#bd93f9">150</span>
+
+SQL<span style="color:#ff79c6">&gt;</span> 
+</code></pre></div>
+<h2 id="4修改数据库允许的最大连接数">4.修改数据库允许的最大连接数</h2>
+<p>(注：修改最大连接数之后，需要重启Oracle)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">SQL<span style="color:#ff79c6">&gt;</span> alter system set processes<span style="color:#ff79c6">=</span><span style="color:#bd93f9">2000</span> scope<span style="color:#ff79c6">=</span>spfile;
+
+System altered.
+
+SQL<span style="color:#ff79c6">&gt;</span> 
+</code></pre></div>
+<h2 id="5关闭oracle服务">5.关闭Oracle服务</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">SQL<span style="color:#ff79c6">&gt;</span> shutdown immediate
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+SQL<span style="color:#ff79c6">&gt;</span> 
+</code></pre></div>
+<h2 id="6开启oracle服务">6.开启Oracle服务</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">SQL<span style="color:#ff79c6">&gt;</span> startup
+ORACLE instance started.
+
+Total System Global Area  <span style="color:#bd93f9">521936896</span> bytes
+Fixed Size		    <span style="color:#bd93f9">2214936</span> bytes
+Variable Size		  <span style="color:#bd93f9">364905448</span> bytes
+Database Buffers	  <span style="color:#bd93f9">146800640</span> bytes
+Redo Buffers		    <span style="color:#bd93f9">8015872</span> bytes
+Database mounted.
+Database opened.
+SQL<span style="color:#ff79c6">&gt;</span> 
+</code></pre></div>
+<h2 id="7查询数据库允许的最大连接数是否生效">7.查询数据库允许的最大连接数是否生效</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">SQL<span style="color:#ff79c6">&gt;</span> select value from v$parameter where name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;processes&#39;</span>;
+
+VALUE
+<span style="color:#ff79c6">--------------------------------------------------------------------------------</span>
+<span style="color:#bd93f9">2000</span>
+</code></pre></div>
+<h2 id="8退出oracle数据库">8.退出Oracle数据库</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">SQL<span style="color:#ff79c6">&gt;</span> exit
+Disconnected from Oracle Database <span style="color:#bd93f9">11</span>g Enterprise Edition Release <span style="color:#bd93f9">11.2.0.1.0</span> <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">64</span>bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+[oracle@af47d363d2a2 <span style="color:#ff79c6">~</span>]$
+</code></pre></div>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1切换oracle用户">1.切换Oracle用户</a></li>
+    <li><a href="#2以system用户身份登录数据库">2.以system用户身份登录数据库</a></li>
+    <li><a href="#3查询数据库允许的最大连接数">3.查询数据库允许的最大连接数</a></li>
+    <li><a href="#4修改数据库允许的最大连接数">4.修改数据库允许的最大连接数</a></li>
+    <li><a href="#5关闭oracle服务">5.关闭Oracle服务</a></li>
+    <li><a href="#6开启oracle服务">6.开启Oracle服务</a></li>
+    <li><a href="#7查询数据库允许的最大连接数是否生效">7.查询数据库允许的最大连接数是否生效</a></li>
+    <li><a href="#8退出oracle数据库">8.退出Oracle数据库</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&is_video=false&description=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0&body=Check out this article: http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&name=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0&description=1.%e5%88%87%e6%8d%a2Oracle%e7%94%a8%e6%88%b7%20sh-4.2%23%20su%20-%20oracle%20Last%20login%3a%20Tue%20Jun%2014%2015%3a42%3a47%20UTC%202022%20on%20pts%2f0%20%5boracle%40af47d363d2a2%20~%5d%24%20%202.%e4%bb%a5system%e7%94%a8%e6%88%b7%e8%ba%ab%e4%bb%bd%e7%99%bb%e5%bd%95%e6%95%b0%e6%8d%ae%e5%ba%93%20%5boracle%40af47d363d2a2%20~%5d%24%20sqlplus%20%2f%20as%20sysdba%20SQL%2aPlus%3a%20Release%2011.2.0.1.0%20Production%20on%20Tue%20Jun%2014%2015%3a58%3a52%202022%20Copyright%20%28c%29%201982%2c%202009%2c%20Oracle.%20All%20rights%20reserved.%20Connected%20to%3a%20Oracle%20Database%2011g%20Enterprise%20Edition%20Release%2011.2.0.1.0%20-%2064bit%20Production%20With%20the%20Partitioning%2c%20OLAP%2c%20Data%20Mining%20and%20Real%20Application%20Testing%20options%20SQL%26gt%3b%20%20%e6%88%96%ef%bc%9a%20%5boracle%40af47d363d2a2%20~%5d%24%20sqlplus%20%2fnolog%20SQL%2aPlus%3a%20Release%2011." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fwww.mootao.com%2fposts%2foracle-processes%2f&t=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e6%9c%80%e5%a4%a7%e8%bf%9e%e6%8e%a5%e6%95%b0" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  fhw 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>
