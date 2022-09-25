@@ -7,7 +7,38 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>fhw</copyright>
-    <lastBuildDate>Mon, 13 Jun 2022 23:00:00 +0000</lastBuildDate><atom:link href="http://www.mootao.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://www.mootao.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chrome浏览器调试Android手机H5页面</title>
+      <link>http://www.mootao.com/posts/chrome-inspect-devices/</link>
+      <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.mootao.com/posts/chrome-inspect-devices/</guid>
+      <description>1. 手机插上数据线连接电脑 2. 手机打开开发者模式 3. Chrome浏览器打开链接 chrome://inspect/#devices 开始调试 </description>
+    </item>
+    
+    <item>
+      <title>Safari浏览器调试IOS手机H5页面</title>
+      <link>http://www.mootao.com/posts/safari-debug-mobile/</link>
+      <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.mootao.com/posts/safari-debug-mobile/</guid>
+      <description>1. 手机插上数据线连接电脑 2. 手机打开开发者模式 3. Safari偏好设置中，开启开发菜单。具体步骤为：Safari -&amp;gt; 偏好设置… -&amp;gt; 高级 -&amp;gt; 勾选在菜单栏显示“开发”菜单。 4. iPhone开启Web检查器，具体步骤为：设置 -&amp;gt; Safari -&amp;gt; 高级 -&amp;gt; Web 检查器。 5.调试对应的页面，打开Safari -&amp;gt; 开发 -&amp;gt; 设备 -&amp;gt; URL </description>
+    </item>
+    
+    <item>
+      <title>Nginx配置ssl自签名证书</title>
+      <link>http://www.mootao.com/posts/https-ssl/</link>
+      <pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.mootao.com/posts/https-ssl/</guid>
+      <description>一般来说根证书是第三方大的CA机构的，需要花钱。所以我们自建CA机构的私钥和根证书，再用它们来签发我们的服务器证书。
+前置条件要安装openssl
+1. 生成ca的私钥ca.key 默认2048位 openssl genrsa -out ca.key  2. CA的证书ca.crt的生成。用来签署server.csr请求文件。 利用私钥生成一个根证书的申请，一般证书的申请格式都是csr。所以私钥和csr一般需要保存好。 这里会要求输入国家、机构等信息，根据自身情况是否需要输入，不输入就直接回车即可。如果在此处设置了密码，那么以后使用它时需要输入该密码 openssl req -new -key ca.key -out ca.csr 
+3. 使用ca私钥签发ca.csr得到ca根证书为ca.crt, 证书有效期设置10年 openssl x509 -req -days 3650 -in ca.csr -signkey ca.key -out ca.crt  4. 创建服务器的私钥server.key 创建服务器私钥和证书申请，并用ca的私钥和证书来签发得到服务器证书 openssl genrsa -out server.key 
+5. 此处和ca证书申请一样，根据需要输入信息 openssl req -new -key server.key -out server.csr  6. 利用ca私钥签发服务器server.csr得到服务器证书server.crt, 证书有效期设置10年 openssl x509 -req -days 3650 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.</description>
+    </item>
+    
     <item>
       <title>Oracle数据库修改最大连接数</title>
       <link>http://www.mootao.com/posts/oracle-processes/</link>

@@ -3,13 +3,93 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.mootao.com/tags/android/</loc>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.mootao.com/categories/</loc>
-    <lastmod>2022-06-13T23:00:00+00:00</lastmod>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/tags/chrome/</loc>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/categories/chrome/</loc>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/posts/chrome-inspect-devices/</loc>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.mootao.com/</loc>
-    <lastmod>2022-06-13T23:00:00+00:00</lastmod>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/tags/ios/</loc>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/categories/ios/</loc>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/posts/</loc>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/tags/safari/</loc>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/categories/safari/</loc>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/posts/safari-debug-mobile/</loc>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/tags/</loc>
+    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/tags/https/</loc>
+    <lastmod>2022-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/categories/https/</loc>
+    <lastmod>2022-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/posts/https-ssl/</loc>
+    <lastmod>2022-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/tags/ssl/</loc>
+    <lastmod>2022-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.mootao.com/categories/ssl/</loc>
+    <lastmod>2022-09-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -24,16 +104,6 @@
   
   <url>
     <loc>http://www.mootao.com/posts/oracle-processes/</loc>
-    <lastmod>2022-06-13T23:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.mootao.com/posts/</loc>
-    <lastmod>2022-06-13T23:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.mootao.com/tags/</loc>
     <lastmod>2022-06-13T23:00:00+00:00</lastmod>
   </url>
   
