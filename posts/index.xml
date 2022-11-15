@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Fhw Site</title>
-    <link>http://www.mootao.com/posts/</link>
+    <link>https://www.mootao.com/posts/</link>
     <description>Recent content in Posts on Fhw Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>fhw</copyright>
-    <lastBuildDate>Sun, 25 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://www.mootao.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mootao.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chrome浏览器调试Android手机H5页面</title>
-      <link>http://www.mootao.com/posts/chrome-inspect-devices/</link>
+      <link>https://www.mootao.com/posts/chrome-inspect-devices/</link>
       <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://www.mootao.com/posts/chrome-inspect-devices/</guid>
+      <guid>https://www.mootao.com/posts/chrome-inspect-devices/</guid>
       <description>1. 手机插上数据线连接电脑 2. 手机打开开发者模式 3. Chrome浏览器打开链接 chrome://inspect/#devices 开始调试 </description>
     </item>
     
     <item>
       <title>Safari浏览器调试IOS手机H5页面</title>
-      <link>http://www.mootao.com/posts/safari-debug-mobile/</link>
+      <link>https://www.mootao.com/posts/safari-debug-mobile/</link>
       <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://www.mootao.com/posts/safari-debug-mobile/</guid>
+      <guid>https://www.mootao.com/posts/safari-debug-mobile/</guid>
       <description>1. 手机插上数据线连接电脑 2. 手机打开开发者模式 3. Safari偏好设置中，开启开发菜单。具体步骤为：Safari -&amp;gt; 偏好设置… -&amp;gt; 高级 -&amp;gt; 勾选在菜单栏显示“开发”菜单。 4. iPhone开启Web检查器，具体步骤为：设置 -&amp;gt; Safari -&amp;gt; 高级 -&amp;gt; Web 检查器。 5.调试对应的页面，打开Safari -&amp;gt; 开发 -&amp;gt; 设备 -&amp;gt; URL </description>
     </item>
     
     <item>
       <title>Nginx配置ssl自签名证书</title>
-      <link>http://www.mootao.com/posts/https-ssl/</link>
+      <link>https://www.mootao.com/posts/https-ssl/</link>
       <pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://www.mootao.com/posts/https-ssl/</guid>
+      <guid>https://www.mootao.com/posts/https-ssl/</guid>
       <description>一般来说根证书是第三方大的CA机构的，需要花钱。所以我们自建CA机构的私钥和根证书，再用它们来签发我们的服务器证书。
 前置条件要安装openssl
 1. 生成ca的私钥ca.key 默认2048位 openssl genrsa -out ca.key  2. CA的证书ca.crt的生成。用来签署server.csr请求文件。 利用私钥生成一个根证书的申请，一般证书的申请格式都是csr。所以私钥和csr一般需要保存好。 这里会要求输入国家、机构等信息，根据自身情况是否需要输入，不输入就直接回车即可。如果在此处设置了密码，那么以后使用它时需要输入该密码 openssl req -new -key ca.key -out ca.csr 
@@ -41,28 +41,28 @@
     
     <item>
       <title>Oracle数据库修改最大连接数</title>
-      <link>http://www.mootao.com/posts/oracle-processes/</link>
+      <link>https://www.mootao.com/posts/oracle-processes/</link>
       <pubDate>Mon, 13 Jun 2022 23:00:00 +0000</pubDate>
       
-      <guid>http://www.mootao.com/posts/oracle-processes/</guid>
+      <guid>https://www.mootao.com/posts/oracle-processes/</guid>
       <description>1.切换Oracle用户 sh-4.2# su - oracle Last login: Tue Jun 14 15:42:47 UTC 2022 on pts/0 [oracle@af47d363d2a2 ~]$  2.以system用户身份登录数据库 [oracle@af47d363d2a2 ~]$ sqlplus / as sysdba SQL*Plus: Release 11.2.0.1.0 Production on Tue Jun 14 15:58:52 2022 Copyright (c) 1982, 2009, Oracle. All rights reserved. Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production With the Partitioning, OLAP, Data Mining and Real Application Testing options SQL&amp;gt;  或： [oracle@af47d363d2a2 ~]$ sqlplus /nolog SQL*Plus: Release 11.</description>
     </item>
     
     <item>
       <title>Oracle数据库dmp文件导入导出</title>
-      <link>http://www.mootao.com/posts/oracle-dmp-impdp-expdp/</link>
+      <link>https://www.mootao.com/posts/oracle-dmp-impdp-expdp/</link>
       <pubDate>Fri, 10 Jun 2022 09:00:00 +0000</pubDate>
       
-      <guid>http://www.mootao.com/posts/oracle-dmp-impdp-expdp/</guid>
+      <guid>https://www.mootao.com/posts/oracle-dmp-impdp-expdp/</guid>
       <description>1、登录Oracle所在的机器、创建一个存放导入文件的目录 (根据实际情况修改) cd /home/oracle mkdir dir_impdp  2、连接Oracle, 给用户授权 sqlplus / as sysdba  3、在Oracle中创建目录并授权给用户 SQL&amp;gt; create directory dir_impdp as &amp;#39;/home/oracle/dir_impdp&amp;#39;; SQL&amp;gt; Grant read,write on directory dir_impdp to 需要导入数据的用户;  4、退出Oracle SQL&amp;gt; exit;  5、将dmp文件和log文件放到上面创建的目录中, 然后执行下面命令导入 (根据实际情况修改参数) impdp 用户名/密码@ORCL directory=dir_impdp dumpfile=JR_RECYCLE.dmp logfile=JR_RECYCLE.log schemas=JR_RECYCLE job_name=my_job remap_schema=原schema:目标schema table_exists_action=replace  示例: JR_RECYCLE 用户 expdp 导出 JR_RECYCLE.dmp 文件， 执行导入 JR_RECYCLE_S1 用户 操作命令 impdp JR_RECYCLE_S1/JR_RECYCLE_S1@ORCL directory=dir_impdp dumpfile=JR_RECYCLE.dmp logfile=JR_RECYCLE.log schemas=JR_RECYCLE job_name=my_job remap_schema=JR_RECYCLE:JR_RECYCLE_S1 table_exists_action=replace  6、执行下面命令导出dmp文件和log文件 (根据实际情况修改参数) expdp 用户名/密码@ORCL directory=dir_impdp schemas=JR_RECYCLE dumpfile=JR_RECYCLE.</description>
     </item>
     
     <item>
       <title>Linux配置Java环境变量</title>
-      <link>http://www.mootao.com/posts/linux-java8-set/</link>
+      <link>https://www.mootao.com/posts/linux-java8-set/</link>
       <pubDate>Fri, 28 Jan 2022 12:00:00 +0000</pubDate>
       
-      <guid>http://www.mootao.com/posts/linux-java8-set/</guid>
+      <guid>https://www.mootao.com/posts/linux-java8-set/</guid>
       <description>1. 下载JDK JDK最新下载地址:
 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 2. 安装JDK   将 jdk-8u171-linux-x64.tar.gz 文件上传至linux服务器

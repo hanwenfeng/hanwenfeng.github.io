@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>safari on Fhw Site</title>
-    <link>http://www.mootao.com/tags/safari/</link>
+    <link>https://www.mootao.com/tags/safari/</link>
     <description>Recent content in safari on Fhw Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>fhw</copyright>
-    <lastBuildDate>Sun, 25 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://www.mootao.com/tags/safari/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mootao.com/tags/safari/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Safari浏览器调试IOS手机H5页面</title>
-      <link>http://www.mootao.com/posts/safari-debug-mobile/</link>
+      <link>https://www.mootao.com/posts/safari-debug-mobile/</link>
       <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://www.mootao.com/posts/safari-debug-mobile/</guid>
+      <guid>https://www.mootao.com/posts/safari-debug-mobile/</guid>
       <description>1. 手机插上数据线连接电脑 2. 手机打开开发者模式 3. Safari偏好设置中，开启开发菜单。具体步骤为：Safari -&amp;gt; 偏好设置… -&amp;gt; 高级 -&amp;gt; 勾选在菜单栏显示“开发”菜单。 4. iPhone开启Web检查器，具体步骤为：设置 -&amp;gt; Safari -&amp;gt; 高级 -&amp;gt; Web 检查器。 5.调试对应的页面，打开Safari -&amp;gt; 开发 -&amp;gt; 设备 -&amp;gt; URL </description>
     </item>
     

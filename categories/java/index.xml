@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>java on Fhw Site</title>
-    <link>http://www.mootao.com/categories/java/</link>
+    <link>https://www.mootao.com/categories/java/</link>
     <description>Recent content in java on Fhw Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>fhw</copyright>
-    <lastBuildDate>Fri, 28 Jan 2022 12:00:00 +0000</lastBuildDate><atom:link href="http://www.mootao.com/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Jan 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://www.mootao.com/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux配置Java环境变量</title>
-      <link>http://www.mootao.com/posts/linux-java8-set/</link>
+      <link>https://www.mootao.com/posts/linux-java8-set/</link>
       <pubDate>Fri, 28 Jan 2022 12:00:00 +0000</pubDate>
       
-      <guid>http://www.mootao.com/posts/linux-java8-set/</guid>
+      <guid>https://www.mootao.com/posts/linux-java8-set/</guid>
       <description>1. 下载JDK JDK最新下载地址:
 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 2. 安装JDK   将 jdk-8u171-linux-x64.tar.gz 文件上传至linux服务器
