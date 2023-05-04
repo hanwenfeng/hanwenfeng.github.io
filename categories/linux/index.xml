@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Fhw Site</title>
+    <link>https://www.mootao.com/categories/linux/</link>
+    <description>Recent content in linux on Fhw Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>fhw</copyright>
+    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mootao.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux查看CPU核数命令</title>
+      <link>https://www.mootao.com/posts/linux-cpu-info/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mootao.com/posts/linux-cpu-info/</guid>
+      <description>1. 查看物理 CPU 个数 可以使用以下命令查看物理 CPU 的个数: [root@localhost /]# grep &amp;#39;physical id&amp;#39; /proc/cpuinfo | sort | uniq | wc -l 2  例如,返回结果为 2,表示有 2 个物理 CPU。
+2. 查看每个物理 CPU 的核数 使用以下命令可以查看每个物理 CPU 中的核数: [root@localhost /]# grep &amp;#39;cores&amp;#39; /proc/cpuinfo | uniq cpu cores	: 6  例如,返回 6,表示每个物理 CPU 有 6 个核。
+3. 计算总的核数 总的核数 = 物理 CPU 个数 x 每个 CPU 的核数 例如,总的核数 = 2 x 6 = 12</description>
+    </item>
+    
+  </channel>
+</rss>

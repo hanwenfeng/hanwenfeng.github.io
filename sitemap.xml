@@ -3,12 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.mootao.com/tags/android/</loc>
-    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+    <loc>https://www.mootao.com/categories/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.mootao.com/categories/</loc>
+    <loc>https://www.mootao.com/categories/cpu/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mootao.com/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mootao.com/tags/linux/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mootao.com/categories/linux/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mootao.com/posts/linux-cpu-info/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mootao.com/posts/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mootao.com/tags/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mootao.com/tags/android/</loc>
     <lastmod>2022-09-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -28,22 +63,12 @@
   </url>
   
   <url>
-    <loc>https://www.mootao.com/</loc>
-    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.mootao.com/tags/ios/</loc>
     <lastmod>2022-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.mootao.com/categories/ios/</loc>
-    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.mootao.com/posts/</loc>
     <lastmod>2022-09-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -59,11 +84,6 @@
   
   <url>
     <loc>https://www.mootao.com/posts/safari-debug-mobile/</loc>
-    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.mootao.com/tags/</loc>
     <lastmod>2022-09-25T00:00:00+00:00</lastmod>
   </url>
   
