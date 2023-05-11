@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="../../js/cactus.js"></script>
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Tomcat配置Java VisualVM参数 | Fhw Site</title>
+  <link rel = 'canonical' href = 'https://www.mootao.com/posts/tomcat-javavisualvm-set/'>
+  <meta name="description" content="不积跬步，无以至千里；不积小流，无以成江海。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Tomcat配置Java VisualVM参数" />
+<meta property="og:description" content="在Tomcat中配置Java VisualVM参数 Java VisualVM是一个用于监视和分析Java虚拟机（JVM）的工具。通过配置Java VisualVM参数，您可以将其连接到正在运行的Tomcat服务器的JVM并查看其运行情况。在本文中，我将介绍如何在Tomcat中配置Java VisualVM参数。
+以下是在Tomcat中配置Java VisualVM参数的步骤：   打开Tomcat的启动脚本，并在其中找到JAVA_OPTS参数的定义。通常，这个参数在catalina.sh（linux系统）或catalina.bat（windows系统）文件中。
+  将以下Java VisualVM参数添加到JAVA_OPTS参数中：
+  -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.rmi.port=1099 -Dcom.sun.management.jmxremote.registry.port=1099 -Djava.rmi.server.hostname=192.168.1.100  这些参数将启用JMX远程连接，并允许VisualVM通过端口1099连接到Tomcat服务器的JVM。请注意，-Djava.rmi.server.hostname参数应设置为您Tomcat服务器的IP地址或主机名。
+ 保存并关闭Tomcat的启动脚本。
+  启动Tomcat服务器并确保它正在运行。
+  打开Java VisualVM并选择“远程”菜单。
+  在“远程”窗口中，单击“添加远程主机”按钮。
+  在“添加远程主机”对话框中，输入Tomcat服务器的主机名或IP地址，并指定Tomcat服务器的JMX端口号，默认情况下为1099。然后单击“确定”按钮。
+  在Java VisualVM中，双击您刚添加的Tomcat服务器，然后选择“JMX”选项卡。
+  点击“连接”按钮连接到Tomcat服务器的JVM。
+  一旦连接成功，您将能够查看Tomcat服务器的JVM进程的内存使用情况，线程信息以及其他相关信息。
+  结论 通过在Tomcat的启动脚本中添加Java VisualVM参数，您可以连接到Tomcat服务器的JVM并监视其运行情况。这对于诊断和解决Tomcat服务器的性能问题非常有用。希望这篇文章能够帮助您配置Java VisualVM参数并连接到Tomcat服务器的JVM。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.mootao.com/posts/tomcat-javavisualvm-set/" />
+<meta property="article:published_time" content="2023-01-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-01-02T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tomcat配置Java VisualVM参数"/>
+<meta name="twitter:description" content="在Tomcat中配置Java VisualVM参数 Java VisualVM是一个用于监视和分析Java虚拟机（JVM）的工具。通过配置Java VisualVM参数，您可以将其连接到正在运行的Tomcat服务器的JVM并查看其运行情况。在本文中，我将介绍如何在Tomcat中配置Java VisualVM参数。
+以下是在Tomcat中配置Java VisualVM参数的步骤：   打开Tomcat的启动脚本，并在其中找到JAVA_OPTS参数的定义。通常，这个参数在catalina.sh（linux系统）或catalina.bat（windows系统）文件中。
+  将以下Java VisualVM参数添加到JAVA_OPTS参数中：
+  -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.rmi.port=1099 -Dcom.sun.management.jmxremote.registry.port=1099 -Djava.rmi.server.hostname=192.168.1.100  这些参数将启用JMX远程连接，并允许VisualVM通过端口1099连接到Tomcat服务器的JVM。请注意，-Djava.rmi.server.hostname参数应设置为您Tomcat服务器的IP地址或主机名。
+ 保存并关闭Tomcat的启动脚本。
+  启动Tomcat服务器并确保它正在运行。
+  打开Java VisualVM并选择“远程”菜单。
+  在“远程”窗口中，单击“添加远程主机”按钮。
+  在“添加远程主机”对话框中，输入Tomcat服务器的主机名或IP地址，并指定Tomcat服务器的JMX端口号，默认情况下为1099。然后单击“确定”按钮。
+  在Java VisualVM中，双击您刚添加的Tomcat服务器，然后选择“JMX”选项卡。
+  点击“连接”按钮连接到Tomcat服务器的JVM。
+  一旦连接成功，您将能够查看Tomcat服务器的JVM进程的内存使用情况，线程信息以及其他相关信息。
+  结论 通过在Tomcat的启动脚本中添加Java VisualVM参数，您可以连接到Tomcat服务器的JVM并监视其运行情况。这对于诊断和解决Tomcat服务器的性能问题非常有用。希望这篇文章能够帮助您配置Java VisualVM参数并连接到Tomcat服务器的JVM。"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://www.mootao.com/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://www.mootao.com/images/favicon.ico" />
+
+  
+  
+  
+  
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6114f7b27b8186adf51ffc7e310ae9e9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://www.mootao.com/posts/linux-cpu-info/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share" style="display: none;"> 
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&text=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&title=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&is_video=false&description=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0&body=Check out this article: https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&title=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&title=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&name=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0&description=%e5%9c%a8Tomcat%e4%b8%ad%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0%20Java%20VisualVM%e6%98%af%e4%b8%80%e4%b8%aa%e7%94%a8%e4%ba%8e%e7%9b%91%e8%a7%86%e5%92%8c%e5%88%86%e6%9e%90Java%e8%99%9a%e6%8b%9f%e6%9c%ba%ef%bc%88JVM%ef%bc%89%e7%9a%84%e5%b7%a5%e5%85%b7%e3%80%82%e9%80%9a%e8%bf%87%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0%ef%bc%8c%e6%82%a8%e5%8f%af%e4%bb%a5%e5%b0%86%e5%85%b6%e8%bf%9e%e6%8e%a5%e5%88%b0%e6%ad%a3%e5%9c%a8%e8%bf%90%e8%a1%8c%e7%9a%84Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JVM%e5%b9%b6%e6%9f%a5%e7%9c%8b%e5%85%b6%e8%bf%90%e8%a1%8c%e6%83%85%e5%86%b5%e3%80%82%e5%9c%a8%e6%9c%ac%e6%96%87%e4%b8%ad%ef%bc%8c%e6%88%91%e5%b0%86%e4%bb%8b%e7%bb%8d%e5%a6%82%e4%bd%95%e5%9c%a8Tomcat%e4%b8%ad%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0%e3%80%82%0a%e4%bb%a5%e4%b8%8b%e6%98%af%e5%9c%a8Tomcat%e4%b8%ad%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0%e7%9a%84%e6%ad%a5%e9%aa%a4%ef%bc%9a%20%20%20%e6%89%93%e5%bc%80Tomcat%e7%9a%84%e5%90%af%e5%8a%a8%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%b9%b6%e5%9c%a8%e5%85%b6%e4%b8%ad%e6%89%be%e5%88%b0JAVA_OPTS%e5%8f%82%e6%95%b0%e7%9a%84%e5%ae%9a%e4%b9%89%e3%80%82%e9%80%9a%e5%b8%b8%ef%bc%8c%e8%bf%99%e4%b8%aa%e5%8f%82%e6%95%b0%e5%9c%a8catalina.sh%ef%bc%88linux%e7%b3%bb%e7%bb%9f%ef%bc%89%e6%88%96catalina.bat%ef%bc%88windows%e7%b3%bb%e7%bb%9f%ef%bc%89%e6%96%87%e4%bb%b6%e4%b8%ad%e3%80%82%0a%20%20%e5%b0%86%e4%bb%a5%e4%b8%8bJava%20VisualVM%e5%8f%82%e6%95%b0%e6%b7%bb%e5%8a%a0%e5%88%b0JAVA_OPTS%e5%8f%82%e6%95%b0%e4%b8%ad%ef%bc%9a%0a%20%20-Dcom.sun.management.jmxremote%20-Dcom.sun.management.jmxremote.port%3d1099%20-Dcom.sun.management.jmxremote.ssl%3dfalse%20-Dcom.sun.management.jmxremote.authenticate%3dfalse%20-Dcom.sun.management.jmxremote.rmi.port%3d1099%20-Dcom.sun.management.jmxremote.registry.port%3d1099%20-Djava.rmi.server.hostname%3d192.168.1.100%20%20%e8%bf%99%e4%ba%9b%e5%8f%82%e6%95%b0%e5%b0%86%e5%90%af%e7%94%a8JMX%e8%bf%9c%e7%a8%8b%e8%bf%9e%e6%8e%a5%ef%bc%8c%e5%b9%b6%e5%85%81%e8%ae%b8VisualVM%e9%80%9a%e8%bf%87%e7%ab%af%e5%8f%a31099%e8%bf%9e%e6%8e%a5%e5%88%b0Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JVM%e3%80%82%e8%af%b7%e6%b3%a8%e6%84%8f%ef%bc%8c-Djava.rmi.server.hostname%e5%8f%82%e6%95%b0%e5%ba%94%e8%ae%be%e7%bd%ae%e4%b8%ba%e6%82%a8Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84IP%e5%9c%b0%e5%9d%80%e6%88%96%e4%b8%bb%e6%9c%ba%e5%90%8d%e3%80%82%0a%20%e4%bf%9d%e5%ad%98%e5%b9%b6%e5%85%b3%e9%97%adTomcat%e7%9a%84%e5%90%af%e5%8a%a8%e8%84%9a%e6%9c%ac%e3%80%82%0a%20%20%e5%90%af%e5%8a%a8Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%b9%b6%e7%a1%ae%e4%bf%9d%e5%ae%83%e6%ad%a3%e5%9c%a8%e8%bf%90%e8%a1%8c%e3%80%82%0a%20%20%e6%89%93%e5%bc%80Java%20VisualVM%e5%b9%b6%e9%80%89%e6%8b%a9%e2%80%9c%e8%bf%9c%e7%a8%8b%e2%80%9d%e8%8f%9c%e5%8d%95%e3%80%82%0a%20%20%e5%9c%a8%e2%80%9c%e8%bf%9c%e7%a8%8b%e2%80%9d%e7%aa%97%e5%8f%a3%e4%b8%ad%ef%bc%8c%e5%8d%95%e5%87%bb%e2%80%9c%e6%b7%bb%e5%8a%a0%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e2%80%9d%e6%8c%89%e9%92%ae%e3%80%82%0a%20%20%e5%9c%a8%e2%80%9c%e6%b7%bb%e5%8a%a0%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e2%80%9d%e5%af%b9%e8%af%9d%e6%a1%86%e4%b8%ad%ef%bc%8c%e8%be%93%e5%85%a5Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84%e4%b8%bb%e6%9c%ba%e5%90%8d%e6%88%96IP%e5%9c%b0%e5%9d%80%ef%bc%8c%e5%b9%b6%e6%8c%87%e5%ae%9aTomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JMX%e7%ab%af%e5%8f%a3%e5%8f%b7%ef%bc%8c%e9%bb%98%e8%ae%a4%e6%83%85%e5%86%b5%e4%b8%8b%e4%b8%ba1099%e3%80%82%e7%84%b6%e5%90%8e%e5%8d%95%e5%87%bb%e2%80%9c%e7%a1%ae%e5%ae%9a%e2%80%9d%e6%8c%89%e9%92%ae%e3%80%82%0a%20%20%e5%9c%a8Java%20VisualVM%e4%b8%ad%ef%bc%8c%e5%8f%8c%e5%87%bb%e6%82%a8%e5%88%9a%e6%b7%bb%e5%8a%a0%e7%9a%84Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%ef%bc%8c%e7%84%b6%e5%90%8e%e9%80%89%e6%8b%a9%e2%80%9cJMX%e2%80%9d%e9%80%89%e9%a1%b9%e5%8d%a1%e3%80%82%0a%20%20%e7%82%b9%e5%87%bb%e2%80%9c%e8%bf%9e%e6%8e%a5%e2%80%9d%e6%8c%89%e9%92%ae%e8%bf%9e%e6%8e%a5%e5%88%b0Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JVM%e3%80%82%0a%20%20%e4%b8%80%e6%97%a6%e8%bf%9e%e6%8e%a5%e6%88%90%e5%8a%9f%ef%bc%8c%e6%82%a8%e5%b0%86%e8%83%bd%e5%a4%9f%e6%9f%a5%e7%9c%8bTomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JVM%e8%bf%9b%e7%a8%8b%e7%9a%84%e5%86%85%e5%ad%98%e4%bd%bf%e7%94%a8%e6%83%85%e5%86%b5%ef%bc%8c%e7%ba%bf%e7%a8%8b%e4%bf%a1%e6%81%af%e4%bb%a5%e5%8f%8a%e5%85%b6%e4%bb%96%e7%9b%b8%e5%85%b3%e4%bf%a1%e6%81%af%e3%80%82%0a%20%20%e7%bb%93%e8%ae%ba%20%e9%80%9a%e8%bf%87%e5%9c%a8Tomcat%e7%9a%84%e5%90%af%e5%8a%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e6%b7%bb%e5%8a%a0Java%20VisualVM%e5%8f%82%e6%95%b0%ef%bc%8c%e6%82%a8%e5%8f%af%e4%bb%a5%e8%bf%9e%e6%8e%a5%e5%88%b0Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JVM%e5%b9%b6%e7%9b%91%e8%a7%86%e5%85%b6%e8%bf%90%e8%a1%8c%e6%83%85%e5%86%b5%e3%80%82%e8%bf%99%e5%af%b9%e4%ba%8e%e8%af%8a%e6%96%ad%e5%92%8c%e8%a7%a3%e5%86%b3Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84%e6%80%a7%e8%83%bd%e9%97%ae%e9%a2%98%e9%9d%9e%e5%b8%b8%e6%9c%89%e7%94%a8%e3%80%82%e5%b8%8c%e6%9c%9b%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%e8%83%bd%e5%a4%9f%e5%b8%ae%e5%8a%a9%e6%82%a8%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0%e5%b9%b6%e8%bf%9e%e6%8e%a5%e5%88%b0Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JVM%e3%80%82" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&t=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#在tomcat中配置java-visualvm参数">在Tomcat中配置Java VisualVM参数</a></li>
+    <li><a href="#以下是在tomcat中配置java-visualvm参数的步骤">以下是在Tomcat中配置Java VisualVM参数的步骤：</a></li>
+    <li><a href="#结论">结论</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Tomcat配置Java VisualVM参数
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-01-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2023-01-02</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          4 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/linux">linux</a>
+            
+             ,  
+            <a class="category-link" href="/categories/tomcat">tomcat</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/linux" rel="tag">linux</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/tomcat" rel="tag">tomcat</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/java-visualvm" rel="tag">Java VisualVM</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h2 id="在tomcat中配置java-visualvm参数">在Tomcat中配置Java VisualVM参数</h2>
+<p>Java VisualVM是一个用于监视和分析Java虚拟机（JVM）的工具。通过配置Java VisualVM参数，您可以将其连接到正在运行的Tomcat服务器的JVM并查看其运行情况。在本文中，我将介绍如何在Tomcat中配置Java VisualVM参数。</p>
+<h2 id="以下是在tomcat中配置java-visualvm参数的步骤">以下是在Tomcat中配置Java VisualVM参数的步骤：</h2>
+<ol>
+<li>
+<p>打开Tomcat的启动脚本，并在其中找到JAVA_OPTS参数的定义。通常，这个参数在catalina.sh（linux系统）或catalina.bat（windows系统）文件中。</p>
+</li>
+<li>
+<p>将以下Java VisualVM参数添加到JAVA_OPTS参数中：</p>
+</li>
+</ol>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#ff79c6">-</span>Dcom.<span style="color:#8be9fd;font-style:italic">sun</span>.management.jmxremote
+<span style="color:#ff79c6">-</span>Dcom.<span style="color:#8be9fd;font-style:italic">sun</span>.management.jmxremote.port<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1099</span>
+<span style="color:#ff79c6">-</span>Dcom.<span style="color:#8be9fd;font-style:italic">sun</span>.management.jmxremote.ssl<span style="color:#ff79c6">=</span><span style="color:#ff79c6">false</span>
+<span style="color:#ff79c6">-</span>Dcom.<span style="color:#8be9fd;font-style:italic">sun</span>.management.jmxremote.authenticate<span style="color:#ff79c6">=</span><span style="color:#ff79c6">false</span>
+<span style="color:#ff79c6">-</span>Dcom.<span style="color:#8be9fd;font-style:italic">sun</span>.management.jmxremote.rmi.port<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1099</span>
+<span style="color:#ff79c6">-</span>Dcom.<span style="color:#8be9fd;font-style:italic">sun</span>.management.jmxremote.registry.port<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1099</span>
+<span style="color:#ff79c6">-</span>Djava.rmi.server.hostname<span style="color:#ff79c6">=</span><span style="color:#bd93f9">192.168.1.100</span>
+</code></pre></div>
+这些参数将启用JMX远程连接，并允许VisualVM通过端口1099连接到Tomcat服务器的JVM。请注意，<code>-Djava.rmi.server.hostname</code>参数应设置为您Tomcat服务器的IP地址或主机名。</p>
+<ol start="3">
+<li>
+<p>保存并关闭Tomcat的启动脚本。</p>
+</li>
+<li>
+<p>启动Tomcat服务器并确保它正在运行。</p>
+</li>
+<li>
+<p>打开Java VisualVM并选择“远程”菜单。</p>
+</li>
+<li>
+<p>在“远程”窗口中，单击“添加远程主机”按钮。</p>
+</li>
+<li>
+<p>在“添加远程主机”对话框中，输入Tomcat服务器的主机名或IP地址，并指定Tomcat服务器的JMX端口号，默认情况下为1099。然后单击“确定”按钮。</p>
+</li>
+<li>
+<p>在Java VisualVM中，双击您刚添加的Tomcat服务器，然后选择“JMX”选项卡。</p>
+</li>
+<li>
+<p>点击“连接”按钮连接到Tomcat服务器的JVM。</p>
+</li>
+<li>
+<p>一旦连接成功，您将能够查看Tomcat服务器的JVM进程的内存使用情况，线程信息以及其他相关信息。</p>
+</li>
+</ol>
+<h2 id="结论">结论</h2>
+<p>通过在Tomcat的启动脚本中添加Java VisualVM参数，您可以连接到Tomcat服务器的JVM并监视其运行情况。这对于诊断和解决Tomcat服务器的性能问题非常有用。希望这篇文章能够帮助您配置Java VisualVM参数并连接到Tomcat服务器的JVM。</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#在tomcat中配置java-visualvm参数">在Tomcat中配置Java VisualVM参数</a></li>
+    <li><a href="#以下是在tomcat中配置java-visualvm参数的步骤">以下是在Tomcat中配置Java VisualVM参数的步骤：</a></li>
+    <li><a href="#结论">结论</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&text=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&title=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&is_video=false&description=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0&body=Check out this article: https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&title=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&title=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&name=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0&description=%e5%9c%a8Tomcat%e4%b8%ad%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0%20Java%20VisualVM%e6%98%af%e4%b8%80%e4%b8%aa%e7%94%a8%e4%ba%8e%e7%9b%91%e8%a7%86%e5%92%8c%e5%88%86%e6%9e%90Java%e8%99%9a%e6%8b%9f%e6%9c%ba%ef%bc%88JVM%ef%bc%89%e7%9a%84%e5%b7%a5%e5%85%b7%e3%80%82%e9%80%9a%e8%bf%87%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0%ef%bc%8c%e6%82%a8%e5%8f%af%e4%bb%a5%e5%b0%86%e5%85%b6%e8%bf%9e%e6%8e%a5%e5%88%b0%e6%ad%a3%e5%9c%a8%e8%bf%90%e8%a1%8c%e7%9a%84Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JVM%e5%b9%b6%e6%9f%a5%e7%9c%8b%e5%85%b6%e8%bf%90%e8%a1%8c%e6%83%85%e5%86%b5%e3%80%82%e5%9c%a8%e6%9c%ac%e6%96%87%e4%b8%ad%ef%bc%8c%e6%88%91%e5%b0%86%e4%bb%8b%e7%bb%8d%e5%a6%82%e4%bd%95%e5%9c%a8Tomcat%e4%b8%ad%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0%e3%80%82%0a%e4%bb%a5%e4%b8%8b%e6%98%af%e5%9c%a8Tomcat%e4%b8%ad%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0%e7%9a%84%e6%ad%a5%e9%aa%a4%ef%bc%9a%20%20%20%e6%89%93%e5%bc%80Tomcat%e7%9a%84%e5%90%af%e5%8a%a8%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%b9%b6%e5%9c%a8%e5%85%b6%e4%b8%ad%e6%89%be%e5%88%b0JAVA_OPTS%e5%8f%82%e6%95%b0%e7%9a%84%e5%ae%9a%e4%b9%89%e3%80%82%e9%80%9a%e5%b8%b8%ef%bc%8c%e8%bf%99%e4%b8%aa%e5%8f%82%e6%95%b0%e5%9c%a8catalina.sh%ef%bc%88linux%e7%b3%bb%e7%bb%9f%ef%bc%89%e6%88%96catalina.bat%ef%bc%88windows%e7%b3%bb%e7%bb%9f%ef%bc%89%e6%96%87%e4%bb%b6%e4%b8%ad%e3%80%82%0a%20%20%e5%b0%86%e4%bb%a5%e4%b8%8bJava%20VisualVM%e5%8f%82%e6%95%b0%e6%b7%bb%e5%8a%a0%e5%88%b0JAVA_OPTS%e5%8f%82%e6%95%b0%e4%b8%ad%ef%bc%9a%0a%20%20-Dcom.sun.management.jmxremote%20-Dcom.sun.management.jmxremote.port%3d1099%20-Dcom.sun.management.jmxremote.ssl%3dfalse%20-Dcom.sun.management.jmxremote.authenticate%3dfalse%20-Dcom.sun.management.jmxremote.rmi.port%3d1099%20-Dcom.sun.management.jmxremote.registry.port%3d1099%20-Djava.rmi.server.hostname%3d192.168.1.100%20%20%e8%bf%99%e4%ba%9b%e5%8f%82%e6%95%b0%e5%b0%86%e5%90%af%e7%94%a8JMX%e8%bf%9c%e7%a8%8b%e8%bf%9e%e6%8e%a5%ef%bc%8c%e5%b9%b6%e5%85%81%e8%ae%b8VisualVM%e9%80%9a%e8%bf%87%e7%ab%af%e5%8f%a31099%e8%bf%9e%e6%8e%a5%e5%88%b0Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JVM%e3%80%82%e8%af%b7%e6%b3%a8%e6%84%8f%ef%bc%8c-Djava.rmi.server.hostname%e5%8f%82%e6%95%b0%e5%ba%94%e8%ae%be%e7%bd%ae%e4%b8%ba%e6%82%a8Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84IP%e5%9c%b0%e5%9d%80%e6%88%96%e4%b8%bb%e6%9c%ba%e5%90%8d%e3%80%82%0a%20%e4%bf%9d%e5%ad%98%e5%b9%b6%e5%85%b3%e9%97%adTomcat%e7%9a%84%e5%90%af%e5%8a%a8%e8%84%9a%e6%9c%ac%e3%80%82%0a%20%20%e5%90%af%e5%8a%a8Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%b9%b6%e7%a1%ae%e4%bf%9d%e5%ae%83%e6%ad%a3%e5%9c%a8%e8%bf%90%e8%a1%8c%e3%80%82%0a%20%20%e6%89%93%e5%bc%80Java%20VisualVM%e5%b9%b6%e9%80%89%e6%8b%a9%e2%80%9c%e8%bf%9c%e7%a8%8b%e2%80%9d%e8%8f%9c%e5%8d%95%e3%80%82%0a%20%20%e5%9c%a8%e2%80%9c%e8%bf%9c%e7%a8%8b%e2%80%9d%e7%aa%97%e5%8f%a3%e4%b8%ad%ef%bc%8c%e5%8d%95%e5%87%bb%e2%80%9c%e6%b7%bb%e5%8a%a0%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e2%80%9d%e6%8c%89%e9%92%ae%e3%80%82%0a%20%20%e5%9c%a8%e2%80%9c%e6%b7%bb%e5%8a%a0%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e2%80%9d%e5%af%b9%e8%af%9d%e6%a1%86%e4%b8%ad%ef%bc%8c%e8%be%93%e5%85%a5Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84%e4%b8%bb%e6%9c%ba%e5%90%8d%e6%88%96IP%e5%9c%b0%e5%9d%80%ef%bc%8c%e5%b9%b6%e6%8c%87%e5%ae%9aTomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JMX%e7%ab%af%e5%8f%a3%e5%8f%b7%ef%bc%8c%e9%bb%98%e8%ae%a4%e6%83%85%e5%86%b5%e4%b8%8b%e4%b8%ba1099%e3%80%82%e7%84%b6%e5%90%8e%e5%8d%95%e5%87%bb%e2%80%9c%e7%a1%ae%e5%ae%9a%e2%80%9d%e6%8c%89%e9%92%ae%e3%80%82%0a%20%20%e5%9c%a8Java%20VisualVM%e4%b8%ad%ef%bc%8c%e5%8f%8c%e5%87%bb%e6%82%a8%e5%88%9a%e6%b7%bb%e5%8a%a0%e7%9a%84Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%ef%bc%8c%e7%84%b6%e5%90%8e%e9%80%89%e6%8b%a9%e2%80%9cJMX%e2%80%9d%e9%80%89%e9%a1%b9%e5%8d%a1%e3%80%82%0a%20%20%e7%82%b9%e5%87%bb%e2%80%9c%e8%bf%9e%e6%8e%a5%e2%80%9d%e6%8c%89%e9%92%ae%e8%bf%9e%e6%8e%a5%e5%88%b0Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JVM%e3%80%82%0a%20%20%e4%b8%80%e6%97%a6%e8%bf%9e%e6%8e%a5%e6%88%90%e5%8a%9f%ef%bc%8c%e6%82%a8%e5%b0%86%e8%83%bd%e5%a4%9f%e6%9f%a5%e7%9c%8bTomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JVM%e8%bf%9b%e7%a8%8b%e7%9a%84%e5%86%85%e5%ad%98%e4%bd%bf%e7%94%a8%e6%83%85%e5%86%b5%ef%bc%8c%e7%ba%bf%e7%a8%8b%e4%bf%a1%e6%81%af%e4%bb%a5%e5%8f%8a%e5%85%b6%e4%bb%96%e7%9b%b8%e5%85%b3%e4%bf%a1%e6%81%af%e3%80%82%0a%20%20%e7%bb%93%e8%ae%ba%20%e9%80%9a%e8%bf%87%e5%9c%a8Tomcat%e7%9a%84%e5%90%af%e5%8a%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e6%b7%bb%e5%8a%a0Java%20VisualVM%e5%8f%82%e6%95%b0%ef%bc%8c%e6%82%a8%e5%8f%af%e4%bb%a5%e8%bf%9e%e6%8e%a5%e5%88%b0Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JVM%e5%b9%b6%e7%9b%91%e8%a7%86%e5%85%b6%e8%bf%90%e8%a1%8c%e6%83%85%e5%86%b5%e3%80%82%e8%bf%99%e5%af%b9%e4%ba%8e%e8%af%8a%e6%96%ad%e5%92%8c%e8%a7%a3%e5%86%b3Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84%e6%80%a7%e8%83%bd%e9%97%ae%e9%a2%98%e9%9d%9e%e5%b8%b8%e6%9c%89%e7%94%a8%e3%80%82%e5%b8%8c%e6%9c%9b%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%e8%83%bd%e5%a4%9f%e5%b8%ae%e5%8a%a9%e6%82%a8%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0%e5%b9%b6%e8%bf%9e%e6%8e%a5%e5%88%b0Tomcat%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%9a%84JVM%e3%80%82" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.mootao.com%2fposts%2ftomcat-javavisualvm-set%2f&t=Tomcat%e9%85%8d%e7%bd%aeJava%20VisualVM%e5%8f%82%e6%95%b0" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  fhw 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

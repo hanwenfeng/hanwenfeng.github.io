@@ -7,7 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>fhw</copyright>
-    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mootao.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mootao.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tomcat配置Java VisualVM参数</title>
+      <link>https://www.mootao.com/posts/tomcat-javavisualvm-set/</link>
+      <pubDate>Mon, 02 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mootao.com/posts/tomcat-javavisualvm-set/</guid>
+      <description>在Tomcat中配置Java VisualVM参数 Java VisualVM是一个用于监视和分析Java虚拟机（JVM）的工具。通过配置Java VisualVM参数，您可以将其连接到正在运行的Tomcat服务器的JVM并查看其运行情况。在本文中，我将介绍如何在Tomcat中配置Java VisualVM参数。
+以下是在Tomcat中配置Java VisualVM参数的步骤：   打开Tomcat的启动脚本，并在其中找到JAVA_OPTS参数的定义。通常，这个参数在catalina.sh（linux系统）或catalina.bat（windows系统）文件中。
+  将以下Java VisualVM参数添加到JAVA_OPTS参数中：
+  -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.rmi.port=1099 -Dcom.sun.management.jmxremote.registry.port=1099 -Djava.rmi.server.hostname=192.168.1.100  这些参数将启用JMX远程连接，并允许VisualVM通过端口1099连接到Tomcat服务器的JVM。请注意，-Djava.rmi.server.hostname参数应设置为您Tomcat服务器的IP地址或主机名。
+ 保存并关闭Tomcat的启动脚本。
+  启动Tomcat服务器并确保它正在运行。
+  打开Java VisualVM并选择“远程”菜单。
+  在“远程”窗口中，单击“添加远程主机”按钮。
+  在“添加远程主机”对话框中，输入Tomcat服务器的主机名或IP地址，并指定Tomcat服务器的JMX端口号，默认情况下为1099。然后单击“确定”按钮。
+  在Java VisualVM中，双击您刚添加的Tomcat服务器，然后选择“JMX”选项卡。
+  点击“连接”按钮连接到Tomcat服务器的JVM。
+  一旦连接成功，您将能够查看Tomcat服务器的JVM进程的内存使用情况，线程信息以及其他相关信息。
+  结论 通过在Tomcat的启动脚本中添加Java VisualVM参数，您可以连接到Tomcat服务器的JVM并监视其运行情况。这对于诊断和解决Tomcat服务器的性能问题非常有用。希望这篇文章能够帮助您配置Java VisualVM参数并连接到Tomcat服务器的JVM。</description>
+    </item>
+    
     <item>
       <title>Linux查看CPU核数命令</title>
       <link>https://www.mootao.com/posts/linux-cpu-info/</link>
