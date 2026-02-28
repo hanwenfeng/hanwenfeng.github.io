@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Oracle数据库dmp文件导入导出 | Fhw Site</title>
-  <link rel = 'canonical' href = 'https://www.mootao.com/posts/oracle-dmp-impdp-expdp/'>
+  <link rel = 'canonical' href = 'https://www.dev-app.cn/posts/oracle-dmp-impdp-expdp/'>
   <meta name="description" content="不积跬步，无以至千里；不积小流，无以成江海。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -18,7 +18,7 @@
   <meta property="og:title" content="Oracle数据库dmp文件导入导出" />
 <meta property="og:description" content="1、登录Oracle所在的机器、创建一个存放导入文件的目录 (根据实际情况修改) cd /home/oracle mkdir dir_impdp  2、连接Oracle, 给用户授权 sqlplus / as sysdba  3、在Oracle中创建目录并授权给用户 SQL&gt; create directory dir_impdp as &#39;/home/oracle/dir_impdp&#39;; SQL&gt; Grant read,write on directory dir_impdp to 需要导入数据的用户;  4、退出Oracle SQL&gt; exit;  5、将dmp文件和log文件放到上面创建的目录中, 然后执行下面命令导入 (根据实际情况修改参数) impdp 用户名/密码@ORCL directory=dir_impdp dumpfile=JR_RECYCLE.dmp logfile=JR_RECYCLE.log schemas=JR_RECYCLE job_name=my_job remap_schema=原schema:目标schema table_exists_action=replace  示例: JR_RECYCLE 用户 expdp 导出 JR_RECYCLE.dmp 文件， 执行导入 JR_RECYCLE_S1 用户 操作命令 impdp JR_RECYCLE_S1/JR_RECYCLE_S1@ORCL directory=dir_impdp dumpfile=JR_RECYCLE.dmp logfile=JR_RECYCLE.log schemas=JR_RECYCLE job_name=my_job remap_schema=JR_RECYCLE:JR_RECYCLE_S1 table_exists_action=replace  6、执行下面命令导出dmp文件和log文件 (根据实际情况修改参数) expdp 用户名/密码@ORCL directory=dir_impdp schemas=JR_RECYCLE dumpfile=JR_RECYCLE." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.mootao.com/posts/oracle-dmp-impdp-expdp/" />
+<meta property="og:url" content="https://www.dev-app.cn/posts/oracle-dmp-impdp-expdp/" />
 <meta property="article:published_time" content="2022-06-10T09:00:00+00:00" />
 <meta property="article:modified_time" content="2022-06-10T09:00:00+00:00" />
 
@@ -31,7 +31,7 @@
     
   
   
-  <link rel="stylesheet" href="https://www.mootao.com/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+  <link rel="stylesheet" href="https://www.dev-app.cn/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q==">
 
   
   
@@ -43,7 +43,7 @@
   
 
   
-<link rel="icon" type="image/png" href="https://www.mootao.com/images/favicon.ico" />
+<link rel="icon" type="image/png" href="https://www.dev-app.cn/images/favicon.ico" />
 
   
   
@@ -87,14 +87,14 @@
       <ul>
         
         <li>
-          <a class="icon" href=" https://www.mootao.com/posts/linux-java8-set/" aria-label="Previous">
+          <a class="icon" href=" https://www.dev-app.cn/posts/linux-java8-set/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://www.mootao.com/posts/oracle-processes/" aria-label="Next">
+          <a class="icon" href="https://www.dev-app.cn/posts/oracle-processes/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -125,47 +125,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&is_video=false&description=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&is_video=false&description=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba&body=Check out this article: https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba&body=Check out this article: https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&name=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba&description=1%e3%80%81%e7%99%bb%e5%bd%95Oracle%e6%89%80%e5%9c%a8%e7%9a%84%e6%9c%ba%e5%99%a8%e3%80%81%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%ad%98%e6%94%be%e5%af%bc%e5%85%a5%e6%96%87%e4%bb%b6%e7%9a%84%e7%9b%ae%e5%bd%95%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%29%20cd%20%2fhome%2foracle%20mkdir%20dir_impdp%20%202%e3%80%81%e8%bf%9e%e6%8e%a5Oracle%2c%20%e7%bb%99%e7%94%a8%e6%88%b7%e6%8e%88%e6%9d%83%20sqlplus%20%2f%20as%20sysdba%20%203%e3%80%81%e5%9c%a8Oracle%e4%b8%ad%e5%88%9b%e5%bb%ba%e7%9b%ae%e5%bd%95%e5%b9%b6%e6%8e%88%e6%9d%83%e7%bb%99%e7%94%a8%e6%88%b7%20SQL%26gt%3b%20create%20directory%20dir_impdp%20as%20%26%2339%3b%2fhome%2foracle%2fdir_impdp%26%2339%3b%3b%20SQL%26gt%3b%20Grant%20read%2cwrite%20on%20directory%20dir_impdp%20to%20%e9%9c%80%e8%a6%81%e5%af%bc%e5%85%a5%e6%95%b0%e6%8d%ae%e7%9a%84%e7%94%a8%e6%88%b7%3b%20%204%e3%80%81%e9%80%80%e5%87%baOracle%20SQL%26gt%3b%20exit%3b%20%205%e3%80%81%e5%b0%86dmp%e6%96%87%e4%bb%b6%e5%92%8clog%e6%96%87%e4%bb%b6%e6%94%be%e5%88%b0%e4%b8%8a%e9%9d%a2%e5%88%9b%e5%bb%ba%e7%9a%84%e7%9b%ae%e5%bd%95%e4%b8%ad%2c%20%e7%84%b6%e5%90%8e%e6%89%a7%e8%a1%8c%e4%b8%8b%e9%9d%a2%e5%91%bd%e4%bb%a4%e5%af%bc%e5%85%a5%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%e5%8f%82%e6%95%b0%29%20impdp%20%e7%94%a8%e6%88%b7%e5%90%8d%2f%e5%af%86%e7%a0%81%40ORCL%20directory%3ddir_impdp%20dumpfile%3dJR_RECYCLE.dmp%20logfile%3dJR_RECYCLE.log%20schemas%3dJR_RECYCLE%20job_name%3dmy_job%20remap_schema%3d%e5%8e%9fschema%3a%e7%9b%ae%e6%a0%87schema%20table_exists_action%3dreplace%20%20%e7%a4%ba%e4%be%8b%3a%20JR_RECYCLE%20%e7%94%a8%e6%88%b7%20expdp%20%e5%af%bc%e5%87%ba%20JR_RECYCLE.dmp%20%e6%96%87%e4%bb%b6%ef%bc%8c%20%e6%89%a7%e8%a1%8c%e5%af%bc%e5%85%a5%20JR_RECYCLE_S1%20%e7%94%a8%e6%88%b7%20%e6%93%8d%e4%bd%9c%e5%91%bd%e4%bb%a4%20impdp%20JR_RECYCLE_S1%2fJR_RECYCLE_S1%40ORCL%20directory%3ddir_impdp%20dumpfile%3dJR_RECYCLE.dmp%20logfile%3dJR_RECYCLE.log%20schemas%3dJR_RECYCLE%20job_name%3dmy_job%20remap_schema%3dJR_RECYCLE%3aJR_RECYCLE_S1%20table_exists_action%3dreplace%20%206%e3%80%81%e6%89%a7%e8%a1%8c%e4%b8%8b%e9%9d%a2%e5%91%bd%e4%bb%a4%e5%af%bc%e5%87%badmp%e6%96%87%e4%bb%b6%e5%92%8clog%e6%96%87%e4%bb%b6%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%e5%8f%82%e6%95%b0%29%20expdp%20%e7%94%a8%e6%88%b7%e5%90%8d%2f%e5%af%86%e7%a0%81%40ORCL%20directory%3ddir_impdp%20schemas%3dJR_RECYCLE%20dumpfile%3dJR_RECYCLE." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&name=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba&description=1%e3%80%81%e7%99%bb%e5%bd%95Oracle%e6%89%80%e5%9c%a8%e7%9a%84%e6%9c%ba%e5%99%a8%e3%80%81%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%ad%98%e6%94%be%e5%af%bc%e5%85%a5%e6%96%87%e4%bb%b6%e7%9a%84%e7%9b%ae%e5%bd%95%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%29%20cd%20%2fhome%2foracle%20mkdir%20dir_impdp%20%202%e3%80%81%e8%bf%9e%e6%8e%a5Oracle%2c%20%e7%bb%99%e7%94%a8%e6%88%b7%e6%8e%88%e6%9d%83%20sqlplus%20%2f%20as%20sysdba%20%203%e3%80%81%e5%9c%a8Oracle%e4%b8%ad%e5%88%9b%e5%bb%ba%e7%9b%ae%e5%bd%95%e5%b9%b6%e6%8e%88%e6%9d%83%e7%bb%99%e7%94%a8%e6%88%b7%20SQL%26gt%3b%20create%20directory%20dir_impdp%20as%20%26%2339%3b%2fhome%2foracle%2fdir_impdp%26%2339%3b%3b%20SQL%26gt%3b%20Grant%20read%2cwrite%20on%20directory%20dir_impdp%20to%20%e9%9c%80%e8%a6%81%e5%af%bc%e5%85%a5%e6%95%b0%e6%8d%ae%e7%9a%84%e7%94%a8%e6%88%b7%3b%20%204%e3%80%81%e9%80%80%e5%87%baOracle%20SQL%26gt%3b%20exit%3b%20%205%e3%80%81%e5%b0%86dmp%e6%96%87%e4%bb%b6%e5%92%8clog%e6%96%87%e4%bb%b6%e6%94%be%e5%88%b0%e4%b8%8a%e9%9d%a2%e5%88%9b%e5%bb%ba%e7%9a%84%e7%9b%ae%e5%bd%95%e4%b8%ad%2c%20%e7%84%b6%e5%90%8e%e6%89%a7%e8%a1%8c%e4%b8%8b%e9%9d%a2%e5%91%bd%e4%bb%a4%e5%af%bc%e5%85%a5%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%e5%8f%82%e6%95%b0%29%20impdp%20%e7%94%a8%e6%88%b7%e5%90%8d%2f%e5%af%86%e7%a0%81%40ORCL%20directory%3ddir_impdp%20dumpfile%3dJR_RECYCLE.dmp%20logfile%3dJR_RECYCLE.log%20schemas%3dJR_RECYCLE%20job_name%3dmy_job%20remap_schema%3d%e5%8e%9fschema%3a%e7%9b%ae%e6%a0%87schema%20table_exists_action%3dreplace%20%20%e7%a4%ba%e4%be%8b%3a%20JR_RECYCLE%20%e7%94%a8%e6%88%b7%20expdp%20%e5%af%bc%e5%87%ba%20JR_RECYCLE.dmp%20%e6%96%87%e4%bb%b6%ef%bc%8c%20%e6%89%a7%e8%a1%8c%e5%af%bc%e5%85%a5%20JR_RECYCLE_S1%20%e7%94%a8%e6%88%b7%20%e6%93%8d%e4%bd%9c%e5%91%bd%e4%bb%a4%20impdp%20JR_RECYCLE_S1%2fJR_RECYCLE_S1%40ORCL%20directory%3ddir_impdp%20dumpfile%3dJR_RECYCLE.dmp%20logfile%3dJR_RECYCLE.log%20schemas%3dJR_RECYCLE%20job_name%3dmy_job%20remap_schema%3dJR_RECYCLE%3aJR_RECYCLE_S1%20table_exists_action%3dreplace%20%206%e3%80%81%e6%89%a7%e8%a1%8c%e4%b8%8b%e9%9d%a2%e5%91%bd%e4%bb%a4%e5%af%bc%e5%87%badmp%e6%96%87%e4%bb%b6%e5%92%8clog%e6%96%87%e4%bb%b6%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%e5%8f%82%e6%95%b0%29%20expdp%20%e7%94%a8%e6%88%b7%e5%90%8d%2f%e5%af%86%e7%a0%81%40ORCL%20directory%3ddir_impdp%20schemas%3dJR_RECYCLE%20dumpfile%3dJR_RECYCLE." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&t=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&t=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -338,47 +338,47 @@ SQL<span style="color:#ff79c6">&gt;</span> Grant read,write on directory dir_imp
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&is_video=false&description=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&is_video=false&description=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba&body=Check out this article: https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba&body=Check out this article: https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&name=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba&description=1%e3%80%81%e7%99%bb%e5%bd%95Oracle%e6%89%80%e5%9c%a8%e7%9a%84%e6%9c%ba%e5%99%a8%e3%80%81%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%ad%98%e6%94%be%e5%af%bc%e5%85%a5%e6%96%87%e4%bb%b6%e7%9a%84%e7%9b%ae%e5%bd%95%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%29%20cd%20%2fhome%2foracle%20mkdir%20dir_impdp%20%202%e3%80%81%e8%bf%9e%e6%8e%a5Oracle%2c%20%e7%bb%99%e7%94%a8%e6%88%b7%e6%8e%88%e6%9d%83%20sqlplus%20%2f%20as%20sysdba%20%203%e3%80%81%e5%9c%a8Oracle%e4%b8%ad%e5%88%9b%e5%bb%ba%e7%9b%ae%e5%bd%95%e5%b9%b6%e6%8e%88%e6%9d%83%e7%bb%99%e7%94%a8%e6%88%b7%20SQL%26gt%3b%20create%20directory%20dir_impdp%20as%20%26%2339%3b%2fhome%2foracle%2fdir_impdp%26%2339%3b%3b%20SQL%26gt%3b%20Grant%20read%2cwrite%20on%20directory%20dir_impdp%20to%20%e9%9c%80%e8%a6%81%e5%af%bc%e5%85%a5%e6%95%b0%e6%8d%ae%e7%9a%84%e7%94%a8%e6%88%b7%3b%20%204%e3%80%81%e9%80%80%e5%87%baOracle%20SQL%26gt%3b%20exit%3b%20%205%e3%80%81%e5%b0%86dmp%e6%96%87%e4%bb%b6%e5%92%8clog%e6%96%87%e4%bb%b6%e6%94%be%e5%88%b0%e4%b8%8a%e9%9d%a2%e5%88%9b%e5%bb%ba%e7%9a%84%e7%9b%ae%e5%bd%95%e4%b8%ad%2c%20%e7%84%b6%e5%90%8e%e6%89%a7%e8%a1%8c%e4%b8%8b%e9%9d%a2%e5%91%bd%e4%bb%a4%e5%af%bc%e5%85%a5%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%e5%8f%82%e6%95%b0%29%20impdp%20%e7%94%a8%e6%88%b7%e5%90%8d%2f%e5%af%86%e7%a0%81%40ORCL%20directory%3ddir_impdp%20dumpfile%3dJR_RECYCLE.dmp%20logfile%3dJR_RECYCLE.log%20schemas%3dJR_RECYCLE%20job_name%3dmy_job%20remap_schema%3d%e5%8e%9fschema%3a%e7%9b%ae%e6%a0%87schema%20table_exists_action%3dreplace%20%20%e7%a4%ba%e4%be%8b%3a%20JR_RECYCLE%20%e7%94%a8%e6%88%b7%20expdp%20%e5%af%bc%e5%87%ba%20JR_RECYCLE.dmp%20%e6%96%87%e4%bb%b6%ef%bc%8c%20%e6%89%a7%e8%a1%8c%e5%af%bc%e5%85%a5%20JR_RECYCLE_S1%20%e7%94%a8%e6%88%b7%20%e6%93%8d%e4%bd%9c%e5%91%bd%e4%bb%a4%20impdp%20JR_RECYCLE_S1%2fJR_RECYCLE_S1%40ORCL%20directory%3ddir_impdp%20dumpfile%3dJR_RECYCLE.dmp%20logfile%3dJR_RECYCLE.log%20schemas%3dJR_RECYCLE%20job_name%3dmy_job%20remap_schema%3dJR_RECYCLE%3aJR_RECYCLE_S1%20table_exists_action%3dreplace%20%206%e3%80%81%e6%89%a7%e8%a1%8c%e4%b8%8b%e9%9d%a2%e5%91%bd%e4%bb%a4%e5%af%bc%e5%87%badmp%e6%96%87%e4%bb%b6%e5%92%8clog%e6%96%87%e4%bb%b6%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%e5%8f%82%e6%95%b0%29%20expdp%20%e7%94%a8%e6%88%b7%e5%90%8d%2f%e5%af%86%e7%a0%81%40ORCL%20directory%3ddir_impdp%20schemas%3dJR_RECYCLE%20dumpfile%3dJR_RECYCLE." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&name=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba&description=1%e3%80%81%e7%99%bb%e5%bd%95Oracle%e6%89%80%e5%9c%a8%e7%9a%84%e6%9c%ba%e5%99%a8%e3%80%81%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%ad%98%e6%94%be%e5%af%bc%e5%85%a5%e6%96%87%e4%bb%b6%e7%9a%84%e7%9b%ae%e5%bd%95%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%29%20cd%20%2fhome%2foracle%20mkdir%20dir_impdp%20%202%e3%80%81%e8%bf%9e%e6%8e%a5Oracle%2c%20%e7%bb%99%e7%94%a8%e6%88%b7%e6%8e%88%e6%9d%83%20sqlplus%20%2f%20as%20sysdba%20%203%e3%80%81%e5%9c%a8Oracle%e4%b8%ad%e5%88%9b%e5%bb%ba%e7%9b%ae%e5%bd%95%e5%b9%b6%e6%8e%88%e6%9d%83%e7%bb%99%e7%94%a8%e6%88%b7%20SQL%26gt%3b%20create%20directory%20dir_impdp%20as%20%26%2339%3b%2fhome%2foracle%2fdir_impdp%26%2339%3b%3b%20SQL%26gt%3b%20Grant%20read%2cwrite%20on%20directory%20dir_impdp%20to%20%e9%9c%80%e8%a6%81%e5%af%bc%e5%85%a5%e6%95%b0%e6%8d%ae%e7%9a%84%e7%94%a8%e6%88%b7%3b%20%204%e3%80%81%e9%80%80%e5%87%baOracle%20SQL%26gt%3b%20exit%3b%20%205%e3%80%81%e5%b0%86dmp%e6%96%87%e4%bb%b6%e5%92%8clog%e6%96%87%e4%bb%b6%e6%94%be%e5%88%b0%e4%b8%8a%e9%9d%a2%e5%88%9b%e5%bb%ba%e7%9a%84%e7%9b%ae%e5%bd%95%e4%b8%ad%2c%20%e7%84%b6%e5%90%8e%e6%89%a7%e8%a1%8c%e4%b8%8b%e9%9d%a2%e5%91%bd%e4%bb%a4%e5%af%bc%e5%85%a5%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%e5%8f%82%e6%95%b0%29%20impdp%20%e7%94%a8%e6%88%b7%e5%90%8d%2f%e5%af%86%e7%a0%81%40ORCL%20directory%3ddir_impdp%20dumpfile%3dJR_RECYCLE.dmp%20logfile%3dJR_RECYCLE.log%20schemas%3dJR_RECYCLE%20job_name%3dmy_job%20remap_schema%3d%e5%8e%9fschema%3a%e7%9b%ae%e6%a0%87schema%20table_exists_action%3dreplace%20%20%e7%a4%ba%e4%be%8b%3a%20JR_RECYCLE%20%e7%94%a8%e6%88%b7%20expdp%20%e5%af%bc%e5%87%ba%20JR_RECYCLE.dmp%20%e6%96%87%e4%bb%b6%ef%bc%8c%20%e6%89%a7%e8%a1%8c%e5%af%bc%e5%85%a5%20JR_RECYCLE_S1%20%e7%94%a8%e6%88%b7%20%e6%93%8d%e4%bd%9c%e5%91%bd%e4%bb%a4%20impdp%20JR_RECYCLE_S1%2fJR_RECYCLE_S1%40ORCL%20directory%3ddir_impdp%20dumpfile%3dJR_RECYCLE.dmp%20logfile%3dJR_RECYCLE.log%20schemas%3dJR_RECYCLE%20job_name%3dmy_job%20remap_schema%3dJR_RECYCLE%3aJR_RECYCLE_S1%20table_exists_action%3dreplace%20%206%e3%80%81%e6%89%a7%e8%a1%8c%e4%b8%8b%e9%9d%a2%e5%91%bd%e4%bb%a4%e5%af%bc%e5%87%badmp%e6%96%87%e4%bb%b6%e5%92%8clog%e6%96%87%e4%bb%b6%20%28%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e6%83%85%e5%86%b5%e4%bf%ae%e6%94%b9%e5%8f%82%e6%95%b0%29%20expdp%20%e7%94%a8%e6%88%b7%e5%90%8d%2f%e5%af%86%e7%a0%81%40ORCL%20directory%3ddir_impdp%20schemas%3dJR_RECYCLE%20dumpfile%3dJR_RECYCLE." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.mootao.com%2fposts%2foracle-dmp-impdp-expdp%2f&t=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.dev-app.cn%2fposts%2foracle-dmp-impdp-expdp%2f&t=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93dmp%e6%96%87%e4%bb%b6%e5%af%bc%e5%85%a5%e5%af%bc%e5%87%ba" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

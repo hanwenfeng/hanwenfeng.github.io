@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tomcat on Fhw Site</title>
-    <link>https://www.mootao.com/tags/tomcat/</link>
+    <link>https://www.dev-app.cn/tags/tomcat/</link>
     <description>Recent content in tomcat on Fhw Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>fhw</copyright>
-    <lastBuildDate>Mon, 02 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mootao.com/tags/tomcat/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.dev-app.cn/tags/tomcat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tomcat配置Java VisualVM参数</title>
-      <link>https://www.mootao.com/posts/tomcat-javavisualvm-set/</link>
+      <link>https://www.dev-app.cn/posts/tomcat-javavisualvm-set/</link>
       <pubDate>Mon, 02 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mootao.com/posts/tomcat-javavisualvm-set/</guid>
+      <guid>https://www.dev-app.cn/posts/tomcat-javavisualvm-set/</guid>
       <description>在Tomcat中配置Java VisualVM参数 Java VisualVM是一个用于监视和分析Java虚拟机（JVM）的工具。通过配置Java VisualVM参数，您可以将其连接到正在运行的Tomcat服务器的JVM并查看其运行情况。在本文中，我将介绍如何在Tomcat中配置Java VisualVM参数。
 以下是在Tomcat中配置Java VisualVM参数的步骤：   打开Tomcat的启动脚本，并在其中找到JAVA_OPTS参数的定义。通常，这个参数在catalina.sh（linux系统）或catalina.bat（windows系统）文件中。
   将以下Java VisualVM参数添加到JAVA_OPTS参数中：

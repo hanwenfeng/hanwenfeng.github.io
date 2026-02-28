@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>https on Fhw Site</title>
-    <link>https://www.mootao.com/categories/https/</link>
+    <link>https://www.dev-app.cn/categories/https/</link>
     <description>Recent content in https on Fhw Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>fhw</copyright>
-    <lastBuildDate>Sat, 24 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mootao.com/categories/https/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.dev-app.cn/categories/https/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx配置ssl自签名证书</title>
-      <link>https://www.mootao.com/posts/https-ssl/</link>
+      <link>https://www.dev-app.cn/posts/https-ssl/</link>
       <pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mootao.com/posts/https-ssl/</guid>
+      <guid>https://www.dev-app.cn/posts/https-ssl/</guid>
       <description>一般来说根证书是第三方大的CA机构的，需要花钱。所以我们自建CA机构的私钥和根证书，再用它们来签发我们的服务器证书。
 前置条件要安装openssl
 1. 生成ca的私钥ca.key 默认2048位 openssl genrsa -out ca.key  2. CA的证书ca.crt的生成。用来签署server.csr请求文件。 利用私钥生成一个根证书的申请，一般证书的申请格式都是csr。所以私钥和csr一般需要保存好。 这里会要求输入国家、机构等信息，根据自身情况是否需要输入，不输入就直接回车即可。如果在此处设置了密码，那么以后使用它时需要输入该密码 openssl req -new -key ca.key -out ca.csr 
